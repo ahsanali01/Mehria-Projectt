@@ -1,0 +1,206 @@
+﻿@model WebApplication5.Models.Accounts.GeneralLegerform
+
+@{
+    ViewBag.Title = "Creategeneralledger";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<h2 class="label-info" style="font-weight:bold; display:flex; justify-content:center">General Ledger For Specific Accounts</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group col-lg-6">
+                @Html.LabelFor(model => model.accounts, htmlAttributes: new { @class = "control-label col-sm-4" })
+                @Html.EditorFor(model => model.accounts, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.accounts, "", new { @class = "text-danger" })
+           
+        </div>
+
+        <div class="form-group col-lg-6">
+                @Html.LabelFor(model => model.fromDate, htmlAttributes: new { @class = "control-label col-sm-4" })
+                @Html.EditorFor(model => model.fromDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fromDate, "", new { @class = "text-danger" })
+        
+        </div>
+
+        <div class="form-group col-lg-6">
+                @Html.LabelFor(model => model.toDate, htmlAttributes: new { @class = "control-label col-sm-4" })
+                @Html.EditorFor(model => model.toDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.toDate, "", new { @class = "text-danger" })
+          
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-8 col-md-6">
+                <input type="submit" value="Search" class="btn btn-default col-lg-pull-5" />
+
+				<input type="submit" value="Print" class="btn btn-default col-lg-pull-5" />
+
+				<input type="submit" value="Print(Detail)" class="btn btn-default col-lg-pull-5" />
+            </div>
+			
+		</div>
+    </div>
+}
+
+<hr />
+<h2 class="label-info" style="font-weight:bold; display:flex; justify-content:center">Voucher Detail</h2>
+<table class="table table-bordered  table-responsive table-hover " style="display:flex; justify-content:center">
+	<tr>
+		<th>
+			Serial No
+		</th>
+		<th>
+			Voucher Date
+		</th>
+		<th>
+			Voucher No
+		</th>
+		<th>
+			Type
+		</th>
+		<th>
+			Narration
+		</th>
+		<th>
+			Debit(Rs)
+		</th>
+		<th>
+			Credit(Rs)
+		</th>
+		
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+			10101
+			
+		</td>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			109876
+		</td>
+		<td>
+			Account Receiveable
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+		<td>
+			5678
+		</td>
+		<td>
+			0.0
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			10101
+
+		</td>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			109876
+		</td>
+		<td>
+			Account Receiveable
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+		<td>
+			5678
+		</td>
+		<td>
+			0.0
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			10101
+
+		</td>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			109876
+		</td>
+		<td>
+			Account Receiveable
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+		<td>
+			5678
+		</td>
+		<td>
+			0.0
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			10101
+
+		</td>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			109876
+		</td>
+		<td>
+			Account Receiveable
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+		<td>
+			5678
+		</td>
+		<td>
+			0.0
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+</table>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

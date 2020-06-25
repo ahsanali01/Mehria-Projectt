@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MehriamarqueeEntity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Mehriamarquee.dbo.AdditionalFacilitiesandFunction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AdditionalFacilitiesandFunction">
+    <Key>
+      <PropertyRef Name="functionID" />
+      <PropertyRef Name="additionalID" />
+    </Key>
+    <Property Name="functionID" Type="int" Nullable="false" />
+    <Property Name="additionalID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bookingdata">
+    <Key>
+      <PropertyRef Name="functionID" />
+    </Key>
+    <Property Name="functionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookingDate" Type="date" Nullable="false" />
+    <Property Name="functionDate" Type="date" Nullable="false" />
+    <Property Name="noofGuest" Type="int" Nullable="false" />
+    <Property Name="rateperGuest" Type="int" Nullable="false" />
+    <Property Name="stagesCharges" Type="int" Nullable="false" />
+    <Property Name="basics_others" Type="int" Nullable="false" />
+    <Property Name="Extras" Type="int" Nullable="false" />
+    <Property Name="electricityCharges" Type="int" Nullable="false" />
+    <Property Name="timeShift" Type="int" Nullable="false" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="ProgramId" Type="int" Nullable="false" />
+    <Property Name="CnicNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CnicNo" />
+    </Key>
+    <Property Name="CnicNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="customerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="remarks" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AdditionalFacilitiesandFunction_Bookingdata">
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="1" />
+    <End Role="AdditionalFacilitiesandFunction" Type="Self.AdditionalFacilitiesandFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bookingdata">
+        <PropertyRef Name="functionID" />
+      </Principal>
+      <Dependent Role="AdditionalFacilitiesandFunction">
+        <PropertyRef Name="functionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bookingdata_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CnicNo" />
+      </Principal>
+      <Dependent Role="Bookingdata">
+        <PropertyRef Name="CnicNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MehriamarqueeEntityStoreContainer">
+    <EntitySet Name="Bookingdata" EntityType="Self.Bookingdata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdditionalFacilitiesandFunction" EntityType="Self.AdditionalFacilitiesandFunction" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AdditionalFacilitiesandFunction].[functionID] AS [functionID], 
+    [AdditionalFacilitiesandFunction].[additionalID] AS [additionalID]
+    FROM [dbo].[AdditionalFacilitiesandFunction] AS [AdditionalFacilitiesandFunction]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AdditionalFacilitiesandFunction_Bookingdata" Association="Self.FK_AdditionalFacilitiesandFunction_Bookingdata">
+      <End Role="Bookingdata" EntitySet="Bookingdata" />
+      <End Role="AdditionalFacilitiesandFunction" EntitySet="AdditionalFacilitiesandFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bookingdata_Customer" Association="Self.FK_Bookingdata_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Bookingdata" EntitySet="Bookingdata" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

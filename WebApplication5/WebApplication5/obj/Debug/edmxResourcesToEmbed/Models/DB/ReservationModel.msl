@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MehriamarqueeEntityStoreContainer" CdmEntityContainer="MehriamarqueeModel">
+    <EntitySetMapping Name="Bookingdatas">
+      <EntityTypeMapping TypeName="MehriamarqueeEntity.Bookingdata">
+        <MappingFragment StoreEntitySet="Bookingdata">
+          <ScalarProperty Name="functionID" ColumnName="functionID" />
+          <ScalarProperty Name="bookingDate" ColumnName="bookingDate" />
+          <ScalarProperty Name="functionDate" ColumnName="functionDate" />
+          <ScalarProperty Name="noofGuest" ColumnName="noofGuest" />
+          <ScalarProperty Name="rateperGuest" ColumnName="rateperGuest" />
+          <ScalarProperty Name="stagesCharges" ColumnName="stagesCharges" />
+          <ScalarProperty Name="basics_others" ColumnName="basics_others" />
+          <ScalarProperty Name="Extras" ColumnName="Extras" />
+          <ScalarProperty Name="electricityCharges" ColumnName="electricityCharges" />
+          <ScalarProperty Name="timeShift" ColumnName="timeShift" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="CnicNo" ColumnName="CnicNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="MehriamarqueeEntity.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CnicNo" ColumnName="CnicNo" />
+          <ScalarProperty Name="customerName" ColumnName="customerName" />
+          <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdditionalFacilitiesandFunctions">
+      <EntityTypeMapping TypeName="MehriamarqueeEntity.AdditionalFacilitiesandFunction">
+        <MappingFragment StoreEntitySet="AdditionalFacilitiesandFunction">
+          <ScalarProperty Name="functionID" ColumnName="functionID" />
+          <ScalarProperty Name="additionalID" ColumnName="additionalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

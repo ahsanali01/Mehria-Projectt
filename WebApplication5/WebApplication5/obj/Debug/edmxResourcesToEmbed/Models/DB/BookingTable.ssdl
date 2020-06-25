@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MehriamarqueeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bookingdata">
+    <Key>
+      <PropertyRef Name="functionID" />
+    </Key>
+    <Property Name="functionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookingDate" Type="date" Nullable="false" />
+    <Property Name="functionDate" Type="date" Nullable="false" />
+    <Property Name="noofGuest" Type="int" Nullable="false" />
+    <Property Name="rateperGuest" Type="int" Nullable="false" />
+    <Property Name="stagesCharges" Type="int" />
+    <Property Name="basics_others" Type="int" Nullable="false" />
+    <Property Name="Extras" Type="int" Nullable="false" />
+    <Property Name="TotalCharges" Type="int" Nullable="false" />
+    <Property Name="timeShift" Type="int" Nullable="false" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="ProgramId" Type="int" Nullable="false" />
+    <Property Name="CnicNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MehriamarqueeModelStoreContainer">
+    <EntitySet Name="Bookingdata" EntityType="Self.Bookingdata" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,47 @@
+﻿
+@RenderPage("~/Views/Shared/combine/upperbodyoftabs.cshtml");
+
+
+<div class="row">
+	<div class="col-lg-4 col-xs-offset-2 ">
+
+		<br />
+		<br />
+
+		<label style="font-size:13pt; font-weight:bold" class="radio-inline"><input type="radio" name="staticofwalim" />Dynamic Menus</label>
+
+
+
+
+
+
+
+	</div>
+
+	<div class="col-lg-4 col-xs-offset-2 ">
+		<br />
+		<br />
+		<label style="font-size:13pt; font-weight:bold " class="radio-inline"><input type="radio" id="myradiobutton" checked name="staticofwalim" />Static Menus</label>
+	</div>
+
+</div>
+<ul class="nav nav-tabs">
+
+	<li id="11"><a data-toggle="tab" href="#StaticSelectionofWalima"><h5 style="font-weight:bold">Static</h5></a></li>
+	<li id="11"><a data-toggle="tab" href="#DynamicSelectionofWalima"><h5 style="font-weight:bold">Dynamic</h5></a></li>
+</ul>
+
+<div class="tab-content">
+
+	<div id="StaticSelectionofWalima" class="tab-pane fade funcTab">
+		@RenderPage("~/Views/Shared/combine/StaticMenuofBaratWalima.cshtml");
+		
+	</div>
+
+
+
+
+	<div id="DynamicSelectionofWalima" class="tab-pane fade funcTab">
+		@RenderPage("~/Views/Shared/combine/DynamicMenu.cshtml");
+	</div>
+</div>

@@ -1,0 +1,198 @@
+﻿@model WebApplication5.Models.BookingDetail
+<form action="AddCustomerRecord/BookingForm" method="post">
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-horizontal">
+
+
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+			<div class="row">
+				<br />
+				<div class="col-lg-4 ">
+
+					<div class="form-group">
+
+						@Html.LabelFor(model => model.FunctionOccuransDate, htmlAttributes: new { @class = "control-label col-sm-3" })
+
+						@Html.EditorFor(model => model.FunctionOccuransDate, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.FunctionOccuransDate, "", new { @class = "text-danger" })
+
+
+
+					</div>
+
+				</div>
+				<div class="col-lg-4">
+					<div class="form-group">
+					           @Html.LabelFor(model => model.noOfGuest, htmlAttributes: new { @class = "control-label col-sm-3" })
+          
+                @Html.EditorFor(model => model.noOfGuest, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.noOfGuest, "", new { @class = "text-danger" })
+
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.ratePerGuest, htmlAttributes: new { @class = "control-label col-sm-3" })
+
+						@Html.EditorFor(model => model.ratePerGuest, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.ratePerGuest, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4">
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.stagescharges, htmlAttributes: new { @class = "control-label col-sm-3" })
+
+						@Html.EditorFor(model => model.stagescharges, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.stagescharges, "", new { @class = "text-danger" })
+
+					</div>
+
+				</div>
+
+
+				<div class="col-lg-4">
+					<div class="form-group">
+						@Html.LabelFor(model => model.basicsOthers, htmlAttributes: new { @class = "control-label col-sm-3" })
+
+						@Html.EditorFor(model => model.basicsOthers, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.basicsOthers, "", new { @class = "text-danger" })
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-4">
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Extras, htmlAttributes: new { @class = "control-label col-sm-3" })
+
+						@Html.EditorFor(model => model.Extras, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.Extras, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
+			<br />
+
+
+
+
+
+
+
+
+			<div class="row">
+				<div class="col-lg-4">
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.TotalCharges, htmlAttributes: new { @class = "control-label col-sm-3" })
+
+						@Html.EditorFor(model => model.TotalCharges, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.TotalCharges, "", new { @class = "text-danger" })
+					</div>
+				</div>
+				<div class="col-lg-2">
+
+					
+					
+						
+
+						<div class="radio-inline col-lg-offset-6">
+							@Html.RadioButton("timeShift", "Night")
+							@Html.ValidationMessageFor(model => model.timeShift, "Day", new { @class = "text-success" })
+						</div>
+
+					
+
+
+				</div>
+
+				<div class="col-lg-2">
+
+
+
+				
+
+					<div class="radio-inline col-lg-offset-6 ">
+						@Html.RadioButton("timeShift","Day")
+						@Html.ValidationMessageFor(model => model.timeShift, "Night", new { @class = "text-success" })
+					</div>
+
+
+
+
+				</div>
+				<div class="col-lg-3">
+					<br />
+
+					<ul class="nav nav-pills nav-stacked">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								Additional Facilities
+								<span class="caret"></span>
+							</a>
+
+							<ul class="dropdown-menu">
+								<li>
+									<table class="table table-responsive table-bordered">
+										<tr>
+											<th>
+												No
+											</th>
+
+											<th>
+												Item Name
+											</th>
+											<th>
+												Price
+											</th>
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>Basic Stage</td>
+											<td><input type="number" /></td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>Dj</td>
+											<td><input type="number" /></td>
+
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>Electricity</td>
+											<td><input type="number" /></td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>Ac/Heating</td>
+											<td><input type="number" /></td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" /></td>
+											<td>Full Hall</td>
+											<td><input type="number" /></td>
+										</tr>
+									</table>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	}
+</form>
+
+	

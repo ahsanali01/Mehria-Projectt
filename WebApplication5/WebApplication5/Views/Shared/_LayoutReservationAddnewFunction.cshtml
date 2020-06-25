@@ -1,0 +1,138 @@
+﻿@model WebApplication5.Models.personalclass
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+	
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/switch.css" rel="stylesheet" />
+	<link href="~/Content/headerhover.css" rel="stylesheet" />
+	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
+	<link href="~/Content/tabMenu.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<header>
+	@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
+	</header>
+	
+		
+
+	
+	<div class="container " style="margin-top:50px;">
+
+
+		
+		<div id="Gridtable">
+
+			@RenderBody();
+			
+			<br />
+			<h2 class="control-label">FUNCTION INFORMATION</h2>
+			<br/>
+
+		</div>
+		<div class="active">
+			<div style="display:flex; justify-content:space-between">
+				<label>
+					<input type="checkbox" id="mycheckbox" name="mehndiopen" checked onclick="testing()" />
+
+					MEHNDI
+				</label>
+				<label>
+					<input type="checkbox" id="mycheckbox" name="baratopen" checked onclick="Barat()" />
+
+					BARAT
+				</label>
+				<label>
+					<input type="checkbox" id="mycheckbox" name="walimaopen" checked onclick="Walima()" />
+
+					WALIMA
+				</label>
+			
+
+					
+			
+				<label>
+					<input type="checkbox" id="mycheckbox" name="partyopen" checked onclick="Party()" />
+
+					PARTY
+				</label>
+			</div>
+			<br/>
+			<br/>
+			<ul class="nav nav-tabs">
+
+				<li id="1" ><a data-toggle="tab" href="#home"><h5 style="font-weight:bold">Mehndi</h5></a></li>
+				<li id="2" ><a  data-toggle="tab" href="#menu1"><h5 style="font-weight:bold">Barat / Nikkah</h5></a></li>
+				<li id="3" ><a  data-toggle="tab" href="#menu2"><h5 style="font-weight:bold">Walima</h5></a></li>
+			
+				<li id="5" ><a  data-toggle="tab" href="#menu4"><h5 style="font-weight:bold">party</h5></a></li>
+			</ul>
+
+			<div class="tab-content">
+				
+				<div id="home" class="tab-pane fade funcTab">
+					@RenderPage("~/Views/Shared/combine/Mehndiinfo.cshtml");
+						</div>
+
+				
+					<div id="menu1" class="tab-pane fade ">
+						
+						@RenderPage("~/Views/Shared/combine/baratTabINFO.cshtml");
+					</div>
+					<div id="menu2" class="tab-pane fade ">
+		
+						@RenderPage("~/Views/Shared/combine/WalimaTabINFO.cshtml");
+
+					</div>
+
+
+					<div id="menu4" class="tab-pane fade ">
+						@RenderPage("~/Views/Shared/combine/partyTabINFO.cshtml");
+				
+			</div>
+				</div>
+			<div class="form-group ">
+	<div class="col-md-offset-10 col-md-10 ">
+		<input type="submit" value="Submit" class="btn btn-default" />
+	</div>
+				</div>
+		</div>
+
+
+
+
+	</div>
+	
+		<hr />
+		
+	
+
+	
+		<footer class="footer ">
+
+			@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+		</footer>
+	<script src="~/scripts/tabscontrol.js"></script>
+	
+		<script src="~/scripts/Gridview.js"></script>
+		<script src="~/scripts/popup.js"></script>
+		<script src="~/scripts/jquery-3.4.1.js"></script>
+		<script src="~/scripts/bootstrap.js"></script>
+
+
+
+</body>
+</html>
+}

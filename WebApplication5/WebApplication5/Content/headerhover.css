@@ -1,0 +1,189 @@
+﻿ .navbar-nav > li > button.btn-margin-left:hover{
+    background-color: #FC0200;
+    color: #ffffff;
+}
+.btn {
+	
+	 background-color:transparent;
+	  
+}
+
+.mainbtn {
+	
+	border-radius:50%;
+	 background-color:#FCE7F0;
+}
+.buttnsacc {
+	margin:10px;
+	display:flex;
+	justify-content:space-around;
+
+}
+.imgetrans {
+	transition: transform .5s;
+}
+.imgetrans:hover {
+	transform: scale(1.3);
+}
+.mainbtnacct {
+	border-radius:8px;
+
+
+	 cursor: pointer;
+    border: 2px solid #0071BD;
+    background-color: transparent;
+    height: 50px; 
+    width: 140px; 
+    font-weight: bold;
+    color: #0071BD;
+	transition-duration: 1s;
+}
+.mainbtnacct:hover{
+	 border:none;
+    color:white;
+    background-color: #0071BD;
+}
+.btn:focus {
+	outline:none;
+}
+.btn-lg {
+	transition:all 1.0s ease-in;
+	
+}
+.btn {
+	transition:all 0.5s ease;
+}
+btn-lg:hover {
+	transform:scale(1.1);
+}
+.btn:hover {
+	transform:scale(1.1);
+}
+.navbar-nav {
+	padding-right:50px;
+	 font-size:10pt;
+	 margin-top:10px;
+}
+.navbar-nav> li > a {
+	color:#000000; 
+	font-weight:bold;
+}
+
+.footer {
+	
+	 background-image: linear-gradient(to bottom, #C7B5B5, #554F4F );
+		margin-top:20px;
+	height:140px;
+}
+.outerfooter {
+	 background-image: linear-gradient(to bottom, #C7B5B5, #554F4F );
+}
+.mehria{
+	margin-left:9px;
+	font-weight:bold;
+	color:#ffffff;
+
+
+}
+
+.image {
+	margin-left:1px;
+	max-width:150px;
+	max-height:100px;
+}
+.special {
+	color:#ffffff;
+	margin-left:9px;
+	font-size:8pt;
+	margin-bottom:5px;
+}
+.list {
+	margin-left:32%;
+}
+.list>li {
+	
+	margin-left:32%;
+	
+}
+.outerfooter {
+	display:flex;
+	justify-content:space-between;
+	
+}
+.listoffunction {
+
+	margin-top:10%;
+	display:flex;
+
+
+
+}
+.arrow:hover {
+	color:aqua;
+
+}
+.Quick {
+	color:#CD12D2;
+}
+.text-right {
+	font-size:8pt;
+}
+
+.text {
+display:flex;
+	margin-left:90px;
+	overflow:hidden;
+}
+
+.table-responsive {
+ display:flex;
+}
+
+.navbar-toggle:hover,.navbar-collapse {
+background:#FCF3F4;
+
+}
+.mainmenu {
+	display:flex;
+		flex-direction:row;
+	justify-content:space-between;
+
+}
+
+.reserve {
+
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between
+	
+}
+.reserve2 {
+
+	display:flex;
+	align-content:space-between;
+	justify-content:space-around;
+	
+}
+.stockmenu {
+	display:flex;
+	align-content:space-between;
+	justify-content:space-between;
+
+}
+.stockmenulabel {
+	display:flex;
+align-content:space-around;
+	justify-content:space-between;
+
+}
+.lowerstockmenu {
+	display:flex;
+	align-content:space-between;
+	justify-content:space-around;
+}
+
+.Quicklinkineer {
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}

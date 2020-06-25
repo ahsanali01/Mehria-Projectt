@@ -1,0 +1,222 @@
+﻿@RenderPage("~/Views/Shared/combine/upperbodyoftabs.cshtml");
+
+	<div class="row">
+		<div class="col-lg-4 col-xs-offset-2 ">
+
+			<br />
+			<br />
+
+			<label style="font-size:13pt; font-weight:bold" class="radio-inline"><input type="radio" name="static" onclick="staticfunc()" />Dynamic Menus</label>
+
+
+
+
+
+
+
+		</div>
+
+		<div class="col-lg-4 col-xs-offset-2 ">
+			<br />
+			<br />
+			<label style="font-size:13pt; font-weight:bold " class="radio-inline"><input type="radio" id="myradiobutton" checked name="static" onclick="staticfunc()" />Static Menus</label>
+		</div>
+
+	</div>
+	<ul class="nav nav-tabs">
+
+		<li id="11"><a data-toggle="tab" href="#StaticSelection"><h5 style="font-weight:bold">Static</h5></a></li>
+		<li id="11"><a data-toggle="tab" href="#DynamicSelection"><h5 style="font-weight:bold">Dynamic</h5></a></li>
+	</ul>
+
+	<div class="tab-content">
+
+		<div id="StaticSelection" class="tab-pane fade funcTab">
+			<div class="row">
+				<div class="col-lg-12">
+					<br />
+					<ul class="nav nav-pills nav-stacked">
+						<li class="dropdown">
+							<input type="radio" name="formenu" /> Select<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								MENU 1
+								<span class="caret"></span>
+							</a>
+
+							<ul class="dropdown-menu">
+								<li>
+									<table class="table table-responsive table-bordered">
+										<tr>
+											<th>
+												No
+											</th>
+
+											<th>
+												Item Name
+											</th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>Channy</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Halwa</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Puri</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Naan</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>Pink Tea</td>
+										</tr>
+									</table>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-12">
+
+					<ul class="nav nav-pills nav-stacked">
+						<li class="dropdown">
+							<input type="radio" name="formenu" /> Select<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								MENU 2
+								<span class="caret"></span>
+							</a>
+
+							<ul class="dropdown-menu">
+								<li>
+									<table class="table table-responsive table-bordered">
+										<tr>
+											<th>
+												No
+											</th>
+
+											<th>
+												Item Name
+											</th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>Chicken Channy</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Halwa</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Puri</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Naan</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>Pink Tea</td>
+										</tr>
+									</table>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-12">
+
+					<ul class="nav nav-pills nav-stacked">
+						<li class="dropdown">
+							<input type="radio" name="formenu" /> Select<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								MENU 3
+								<span class="caret"></span>
+							</a>
+
+							<ul class="dropdown-menu">
+								<li>
+									<table class="table table-responsive table-bordered">
+										<tr>
+											<th>
+												No
+											</th>
+
+											<th>
+												Item Name
+											</th>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>Dam Qeema</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Halwa</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Puri</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>Naan</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>Pink Tea</td>
+										</tr>
+									</table>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div id="DynamicSelection" class="tab-pane fade funcTab">
+			@RenderPage("~/Views/Shared/combine/DynamicMenu.cshtml");
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

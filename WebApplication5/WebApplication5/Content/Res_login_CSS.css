@@ -1,0 +1,144 @@
+﻿
+
+.modal-content1
+{
+ 
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content1 .modal-header1
+{
+   
+    padding: 40px;
+    
+    background-image: linear-gradient(#F17662 , #563266 , #0B1638);
+   
+    display: flex;
+    flex-direction: column;
+	      
+}
+
+.modal-content1 .modal-header1 .img1 img 
+{
+ 
+      margin:auto;
+	padding-right:35px;
+    display: block;
+    padding-bottom: 20px;
+
+}
+.forget-link .form-check   
+{ 
+	 color: white;
+}
+.form-check {  
+	font-size:12pt; 
+}
+
+a:link
+{
+	margin-left:2px;
+    color: royalblue;
+    text-decoration: none;
+}
+
+a:hover 
+{
+    color:burlywood;
+}
+
+.modal-content1 .modal-header1 .form-filed
+{
+    display: flex;
+    flex-direction: column;    
+}
+
+.modal-content1 .modal-header1 .form-filed .input-box
+{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+ 
+}
+
+
+
+.modal-content1 .modal-header1 .form-filed .input-box .form-control
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    padding:0px 0px 0px 45px;
+    border:1px solid #3B3B3B
+}
+
+.modal-content1 .modal-header1 .form-filed .input-box  .form-control::placeholder
+{
+    color: rgb(85, 65, 59);
+    font-weight: bold;
+}
+
+.modal-content1 .modal-header1 .form-filed .input-box span
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*z-index: 1;*/
+}
+
+
+.modal-content1 .modal-header1 .form-filed .input-box span img
+{
+    width: 28px;
+    
+}
+
+
+
+.modal-content1 .modal-header1 .form-filed .button-box 
+{
+    width: 100%;
+    display: flex;
+    padding-top: 10px;
+}
+
+.modal-content1 .modal-header1 .form-filed .button-box input
+{
+	
+    width: 70%;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    padding: 8px 35px;
+    background-color: #FE5387;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 70px;  
+    /*margin: 4px 2px;*/
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid rgb(247, 33, 236);
+    transition: all 1s ease;
+}
+
+.modal-content1 .modal-header1 .form-filed .button-box input:hover
+{
+    border:2px solid rgb(89, 204, 250);
+}
+
+.forget-link {
+ 
+padding-top: 4px;
+padding-bottom: 12px;
+
+}

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.Bookingdata>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutFunctionDetail.cshtml";
+}
+
+<h2 class="label-info">Event Details</h2>
+
+<table class="table table-bordered table-striped table-responsive table-hover">
+    <tr>
+		<th>
+			Booking Date
+		</th>
+		<th>
+			Function Date
+		</th>
+		<th>
+			No of Guest
+		</th>
+		<th>
+			Rate Per Guest(Rs)
+		</th>
+		<th>
+			Stage Charges(Rs)
+		</th>
+		<th>
+			Basics/Others(Rs)
+		</th>
+		<th>
+			Extras
+		</th>
+		<th>
+			Total Charges
+		</th>
+		<th>
+			Event Occuras
+		</th>
+       
+		<th class="alert-warning glyphicon glyphicon-arrow-down">
+			CLICK HERE BELOW FOR REQUEST
+		</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.bookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.functionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.noofGuest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rateperGuest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stagesCharges)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.basics_others)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCharges)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeShift)
+        </td>
+       
+        <td>
+			<button class="btn btn-primary requestbtn center-block  " onclick="userrequest()">Send Request</button>
+        </td>
+    </tr>
+}
+
+</table>
+<script src="~/scripts/Requestofbutton.js"></script>

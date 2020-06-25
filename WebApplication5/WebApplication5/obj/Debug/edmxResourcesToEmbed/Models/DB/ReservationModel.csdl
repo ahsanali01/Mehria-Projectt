@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MehriamarqueeEntity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bookingdata">
+    <Key>
+      <PropertyRef Name="functionID" />
+    </Key>
+    <Property Name="functionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bookingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="functionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="noofGuest" Type="Int32" Nullable="false" />
+    <Property Name="rateperGuest" Type="Int32" Nullable="false" />
+    <Property Name="stagesCharges" Type="Int32" Nullable="false" />
+    <Property Name="basics_others" Type="Int32" Nullable="false" />
+    <Property Name="Extras" Type="Int32" Nullable="false" />
+    <Property Name="electricityCharges" Type="Int32" Nullable="false" />
+    <Property Name="timeShift" Type="Int32" Nullable="false" />
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="ProgramId" Type="Int32" Nullable="false" />
+    <Property Name="CnicNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AdditionalFacilitiesandFunctions" Relationship="Self.FK_AdditionalFacilitiesandFunction_Bookingdata" FromRole="Bookingdata" ToRole="AdditionalFacilitiesandFunction" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Bookingdata_Customer" FromRole="Bookingdata" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CnicNo" />
+    </Key>
+    <Property Name="CnicNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Bookingdatas" Relationship="Self.FK_Bookingdata_Customer" FromRole="Customer" ToRole="Bookingdata" />
+  </EntityType>
+  <EntityType Name="AdditionalFacilitiesandFunction">
+    <Key>
+      <PropertyRef Name="functionID" />
+      <PropertyRef Name="additionalID" />
+    </Key>
+    <Property Name="functionID" Type="Int32" Nullable="false" />
+    <Property Name="additionalID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bookingdata" Relationship="Self.FK_AdditionalFacilitiesandFunction_Bookingdata" FromRole="AdditionalFacilitiesandFunction" ToRole="Bookingdata" />
+  </EntityType>
+  <Association Name="FK_AdditionalFacilitiesandFunction_Bookingdata">
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="1" />
+    <End Role="AdditionalFacilitiesandFunction" Type="Self.AdditionalFacilitiesandFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bookingdata">
+        <PropertyRef Name="functionID" />
+      </Principal>
+      <Dependent Role="AdditionalFacilitiesandFunction">
+        <PropertyRef Name="functionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bookingdata_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CnicNo" />
+      </Principal>
+      <Dependent Role="Bookingdata">
+        <PropertyRef Name="CnicNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MehriamarqueeModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bookingdatas" EntityType="Self.Bookingdata" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="AdditionalFacilitiesandFunctions" EntityType="Self.AdditionalFacilitiesandFunction" />
+    <AssociationSet Name="FK_AdditionalFacilitiesandFunction_Bookingdata" Association="Self.FK_AdditionalFacilitiesandFunction_Bookingdata">
+      <End Role="Bookingdata" EntitySet="Bookingdatas" />
+      <End Role="AdditionalFacilitiesandFunction" EntitySet="AdditionalFacilitiesandFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bookingdata_Customer" Association="Self.FK_Bookingdata_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Bookingdata" EntitySet="Bookingdatas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+
+	
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/headerhover.css" rel="stylesheet" />
+	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<header>
+		@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
+	</header>
+	
+	<div id="mySidebar" class="sidebar">
+		<h2>Functions</h2>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="@Url.Action("Index","BookingForm")">ADD New Function</a>
+		<a href="@Url.Action("Index","SendRequestForStock")">Send Stock request</a>
+		<a href="@Url.Action("Index","CustomerINFO")">Clients Information</a>
+		<a href="#">Function deatils</a>
+
+
+	</div>
+
+	<div id="main">
+		<button id="openbtn" onclick="openNav()">&#9776;</button>
+
+	</div>
+	
+	<div class="container ">
+
+		<div class="mainmenu">
+			<div >
+
+
+				<button class="btn btn-sm mainbtn small"><img class="img-responsive" src="~/Picture/icons8-event-accepted-64.png" width="60" height="60" /></button>
+
+			</div>
+			<div >
+
+
+				<button class="btn btn-sm mainbtn small"><img class="img-responsive" src="~/Picture/icons8-schedule-80.png" width="60" height="60" /></button>
+
+			</div>
+			<div>
+
+				<button class="btn btn-sm mainbtn small"><img class="img-responsive" src="~/Picture/icons8-event-declined-512.png" width="60" height="60" /></button>
+
+			</div>
+			<div >
+
+				<button  class="btn btn-sm mainbtn small "><img class="img-responsive" src="~/Picture/icons8-planner-96.png" width="60" height="60" /></button>
+
+			</div>
+
+		</div>
+		<div class="reserve"  >
+			<div >
+				<p>Active Events</p>
+			</div>
+			<div>
+				<p>Free Slots</p>
+			</div>
+			<div>
+				<p>Deactive Events</p>
+			</div>
+			<div style="padding-right:7px">
+				<p>Reminder</p>
+			</div>
+
+		</div>
+		<div id="Gridtable">
+
+			@RenderBody();
+		</div>
+
+
+
+
+	</div>
+	
+		<hr />
+		
+	
+
+	
+		<footer class="footer ">
+
+			@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+		</footer>
+		<script src="~/scripts/Gridview.js"></script>
+		<script src="~/scripts/popup.js"></script>
+		<script src="~/scripts/jquery-3.4.1.js"></script>
+		<script src="~/scripts/bootstrap.js"></script>
+
+
+
+</body>
+</html>
