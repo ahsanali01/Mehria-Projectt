@@ -1,5 +1,5 @@
 ﻿
-		<div class="navbar  navbar-fixed-top  " id="navbar" style="background:#FCF3F4;  height:75px;  ">
+	<div class="navbar  navbar-fixed-top  " id="navbar" style="background:#FF0000;  height:75px;  ">
 			<div class="navbar-header">
 
 
@@ -13,7 +13,7 @@
 
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav  navbar-right">
-					<li><button class="btn btn-lg btn-margin-left" href='@Url.Action("Index", "Home")'>@User.Identity.Name</button></li>
+					<li><button class="btn btn-lg btn-margin-left" onclick="location.href='@Url.Action("check","Login")'">@User.Identity.Name</button></li>
 					<li><button class="btn btn-lg btn-margin-left" href='@Url.Action("Index", "Home")'>Home</button></li>
 					<li><button class="btn btn-lg btn-margin-left" href='@Url.Action("Index", "Home")'>About Us</button></li>
 					<li><button class="btn btn-lg btn-margin-left" href='@Url.Action("Index", "Home")'>Contact</button></li>
@@ -24,10 +24,10 @@
 					<li class="dropdown ">
 						<button  id="setting" href="#" data-toggle="dropdown" class="btn btn-lg btn-margin-left glyphicon glyphicon-cog" >Setting<span class="caret "></span></button>
 						<ul class="dropdown-menu ">
-							<li><a href='@Url.Action("Index", "Home")' class="glyphicon glyphicon-dashboard"> Reservation</a></li>
-							<li><a href='@Url.Action("Index", "Home")' class="glyphicon glyphicon-shopping-cart"> Stock</a></li>
-							<li><a href='@Url.Action("Index", "Home")' class="glyphicon glyphicon-paperclip"> Accounts</a></li>
-							<li><a href='@Url.Action("passwordchangeforuser","ChangePassword")' class="glyphicon glyphicon-paperclip"> Chnage Password</a></li>
+							<li><a href='@Url.Action("check","Login")' class="glyphicon glyphicon-dashboard"> Reservation</a></li>
+							<li><a href='@Url.Action("check","Login")' class="glyphicon glyphicon-shopping-cart"> Stock</a></li>
+							<li><a href='@Url.Action("check","Login")' class="glyphicon glyphicon-paperclip"> Accounts</a></li>
+							<li><a href='@Url.Action("passwordchangeforuser","ChangePassword")' class="glyphicon glyphicon-paperclip"> Change Password</a></li>
 							<li><a href='@Url.Action("Logout", "Login")' class="glyphicon glyphicon-log-out"> signout</a></li>
 						</ul>
 

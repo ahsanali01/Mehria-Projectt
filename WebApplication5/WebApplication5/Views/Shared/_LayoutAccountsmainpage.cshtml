@@ -1,31 +1,31 @@
-﻿<!DOCTYPE html>
+﻿!DOCTYPE html>
 <html>
 <head>
-	
 
-	
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="~/Content/headerhover.css" rel="stylesheet" />
 	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+	<script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
 	<header>
 		@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
 	</header>
-	
+
 	<div id="mySidebar" class="sidebar">
-		<h2 class="label-success">Reports</h2>
+		<h2 class="label-primary" style="color:white">Reports</h2>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="">Monthly Report</a>
 		<a href="">Sales Report</a>
 		<a href="">Income Tax Report</a>
 		<a href="">Chart of Accounts</a>
-		<a href="">Function deatils</a>
+	
 
 
 	</div>
@@ -34,12 +34,12 @@
 		<button id="openbtn" onclick="openNav()">&#9776;</button>
 
 	</div>
-	
+
 	<div class="container ">
-		
+
 
 		<div style="display:flex; justify-content:center">
-			<img class="img-responsive"  src="~/Picture/Accounts/Main_img.jpg" width="260" height="180" />
+			<img class="img-responsive" src="~/Picture/Accounts/Main_img.jpg" width="260" height="180" />
 		</div>
 		<br />
 		<div class="firstp" style="display:flex; justify-content:center;">
@@ -47,16 +47,16 @@
 				<p style="margin-top:14px; text-align:center; font-weight:bold; font-size:14pt; color:white;">ACCOUNTS</p>
 			</div>
 		</div>
-		
+
 		<br />
 		<div class="buttnsacc">
-			<div >
+			<div>
 
 
 				<img class="img-responsive imgetrans" src="~/Picture/Accounts/Journal.jpg" width="100" height="80" />
 
 			</div>
-			<div >
+			<div>
 
 
 				<img class="img-responsive imgetrans" src="~/Picture/Accounts/Ledger.jpg" width="100" height="80" />
@@ -67,19 +67,19 @@
 				<img class="img-responsive imgetrans" src="~/Picture/Accounts/Voucher.jpg" width="100" height="80" />
 
 			</div>
-			
+
 
 		</div>
-		<div class="buttnsacc"  >
-			<div >
-				<button class="mainbtnacct" onclick="location.href='@Url.Action("general","GeneralJeneral")'" >General Journal</button>
-            </div>
+		<div class="buttnsacc">
+			<div>
+				<button class="mainbtnacct" onclick="location.href='@Url.Action("general","GeneralJeneral")'">General Journal</button>
+			</div>
 			<div>
 				<button class="mainbtnacct" onclick="location.href='@Url.Action("Creategeneralledger","GeneralLedger")'">General Ledger</button>
-           </div>
+			</div>
 			<div>
 				<button class="mainbtnacct" onclick="location.href='@Url.Action("Index","Voucher")'">Voucher</button>
-           </div>
+			</div>
 
 		</div>
 		<div id="Gridtable">
@@ -91,21 +91,21 @@
 
 
 	</div>
-	
-		<hr />
-		
-	
 
-	
-		<footer class="footer ">
+	<hr />
 
-			@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
 
-		</footer>
-		<script src="~/scripts/Gridview.js"></script>
-		<script src="~/scripts/popup.js"></script>
-		<script src="~/scripts/jquery-3.4.1.js"></script>
-		<script src="~/scripts/bootstrap.js"></script>
+
+
+	<footer class="footer ">
+
+		@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+	</footer>
+	<script src="~/scripts/Gridview.js"></script>
+	<script src="~/scripts/popup.js"></script>
+	<script src="~/scripts/jquery-3.4.1.js"></script>
+	<script src="~/scripts/bootstrap.js"></script>
 
 
 

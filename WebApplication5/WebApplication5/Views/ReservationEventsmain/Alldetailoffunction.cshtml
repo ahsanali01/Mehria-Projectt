@@ -1,0 +1,129 @@
+﻿@model IEnumerable<WebApplication5.ViewModel.CustomerView.BookingViewModel>
+
+@{
+    ViewBag.Title = "Alldetailoffunction";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<h2 class="label-info" style="display:flex; justify-content:center">Detail Function</h2>
+
+
+@if (Model != null)
+{
+	<table class="table table-bordered table-striped table-responsive table-hover">
+		<tr>
+
+			<th>
+				@Html.DisplayNameFor(model => model.bookingDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.functionDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.noofGuest)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.rateperGuest)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.stagesCharges)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.basics_others)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Extras)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.TotalCharges)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.timeShift)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CnicNo)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.customerName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Address)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.mobileNo)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.remarks)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Menuname)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ProgramName)
+			</th>
+
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.bookingDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.functionDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.noofGuest)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.rateperGuest)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.stagesCharges)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.basics_others)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Extras)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.TotalCharges)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.timeShift)
+				</td>
+
+				<td>
+					@Html.DisplayFor(modelItem => item.CnicNo)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.customerName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Address)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.mobileNo)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.remarks)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Menuname)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ProgramName)
+				</td>
+
+			</tr>
+		}
+
+	</table>
+}
+
+else
+{
+
+}

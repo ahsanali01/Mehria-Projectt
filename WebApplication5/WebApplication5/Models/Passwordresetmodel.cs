@@ -8,9 +8,9 @@ namespace WebApplication5.Models
 {
     public class Passwordresetmodel
     {
-        [Display(Name = "UserName")]
-        [Required(ErrorMessage = "UserName is required")]
-        public string username { get; set; }
+        [Display(Name = "sended Token")]
+        [Required(ErrorMessage = "Token is required")]
+        public string Token { get; set; }
         [Display(Name = "New Password")]
         [Required(ErrorMessage = "new Password is required")]
         [DataType(DataType.Password)]

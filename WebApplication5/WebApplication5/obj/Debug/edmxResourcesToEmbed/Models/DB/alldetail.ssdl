@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MehriamarqueeModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdditionalFacilities">
+    <Key>
+      <PropertyRef Name="additionalID" />
+    </Key>
+    <Property Name="additionalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="additionalName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bookingdata">
+    <Key>
+      <PropertyRef Name="functionID" />
+    </Key>
+    <Property Name="functionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookingDate" Type="date" Nullable="false" />
+    <Property Name="functionDate" Type="date" Nullable="false" />
+    <Property Name="noofGuest" Type="int" Nullable="false" />
+    <Property Name="rateperGuest" Type="int" Nullable="false" />
+    <Property Name="stagesCharges" Type="int" />
+    <Property Name="basics_others" Type="int" Nullable="false" />
+    <Property Name="Extras" Type="int" Nullable="false" />
+    <Property Name="TotalCharges" Type="int" Nullable="false" />
+    <Property Name="timeShift" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="ProgramId" Type="int" Nullable="false" />
+    <Property Name="CnicNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CnicNo" />
+    </Key>
+    <Property Name="CnicNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="customerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="remarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Dishes">
+    <Key>
+      <PropertyRef Name="dishID" />
+    </Key>
+    <Property Name="dishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dishName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="menuID" />
+    </Key>
+    <Property Name="menuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menuName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Programs">
+    <Key>
+      <PropertyRef Name="programID" />
+    </Key>
+    <Property Name="programID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="programName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bookingdata_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CnicNo" />
+      </Principal>
+      <Dependent Role="Bookingdata">
+        <PropertyRef Name="CnicNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bookingdata_Menus">
+    <End Role="Menus" Type="Self.Menus" Multiplicity="1" />
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menus">
+        <PropertyRef Name="menuID" />
+      </Principal>
+      <Dependent Role="Bookingdata">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bookingdata_Programs">
+    <End Role="Programs" Type="Self.Programs" Multiplicity="1" />
+    <End Role="Bookingdata" Type="Self.Bookingdata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programs">
+        <PropertyRef Name="programID" />
+      </Principal>
+      <Dependent Role="Bookingdata">
+        <PropertyRef Name="ProgramId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MehriamarqueeModel2StoreContainer">
+    <EntitySet Name="AdditionalFacilities" EntityType="Self.AdditionalFacilities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bookingdata" EntityType="Self.Bookingdata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dishes" EntityType="Self.Dishes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Programs" EntityType="Self.Programs" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bookingdata_Customer" Association="Self.FK_Bookingdata_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Bookingdata" EntitySet="Bookingdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bookingdata_Menus" Association="Self.FK_Bookingdata_Menus">
+      <End Role="Menus" EntitySet="Menus" />
+      <End Role="Bookingdata" EntitySet="Bookingdata" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bookingdata_Programs" Association="Self.FK_Bookingdata_Programs">
+      <End Role="Programs" EntitySet="Programs" />
+      <End Role="Bookingdata" EntitySet="Bookingdata" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

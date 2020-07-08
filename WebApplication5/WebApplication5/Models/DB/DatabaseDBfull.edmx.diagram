@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40e1ca0c52d943a583db0cb0998a311c" Name="Diagram1">
+        <EntityTypeShape EntityType="MehriamarqueeModel3.AdditionalFacility" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.AdditionalFacilitiesandFunction" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.Bookingdata" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.Customer" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.Dish" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.Menu" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.MenuWithDish" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.Program" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MehriamarqueeModel3.ProgramsandMenu" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_AdditionalFacilitiesandFunction_AdditionalFacilities" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_AdditionalFacilitiesandFunction_Bookingdata" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_Bookingdata_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_Bookingdata_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_Bookingdata_Programs" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_MenuWithDishes_Dishes" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_MenuWithDishes_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_ProgramsandMenu_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="MehriamarqueeModel3.FK_ProgramsandMenu_Programs" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

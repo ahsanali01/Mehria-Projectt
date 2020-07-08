@@ -8,7 +8,7 @@
 
 	
 <div class="modal  fade" id="stocklogin" tabindex="-1">
-	<div class="modal-dialog  " style="margin-top:13%">
+	<div class="modal-dialog">
 		<div class="modal-content modal-content3">
 			<div class="modal-header modal-header3 modal-open ">
 				<div class="img img3">
@@ -53,7 +53,7 @@
 								</div>
 								
 							
-								<button class="btn" onclick="location.href='@Url.Action("GetPasswordform","PasswordReset")'">Reset Password</button>
+								<button class="btn" onclick="location.href='@Url.Action("ResetLinkforPassword","Login")'">Reset Password</button>
 
 							</div>
 							<div class="button-box form-group">
@@ -75,4 +75,4 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script src='@Url.Content("~/scripts/ShowPassword.js")'></script>
+<script src="~/scripts/ShowPassword.js"></script>

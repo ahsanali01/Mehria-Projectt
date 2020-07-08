@@ -155,25 +155,15 @@
     <Content Include="Content\tabMenu.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\DB\Bookingdetail.Context.tt">
+    <Content Include="Models\DB\DatabaseDBfull.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bookingdetail.edmx</DependentUpon>
-      <LastGenOutput>Bookingdetail.Context.cs</LastGenOutput>
+      <DependentUpon>DatabaseDBfull.edmx</DependentUpon>
+      <LastGenOutput>DatabaseDBfull.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DB\Bookingdetail.tt">
+    <Content Include="Models\DB\DatabaseDBfull.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bookingdetail.edmx</DependentUpon>
-      <LastGenOutput>Bookingdetail.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DB\ViewFunctionShortModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ViewFunctionShortModel.edmx</DependentUpon>
-      <LastGenOutput>ViewFunctionShortModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DB\ViewFunctionShortModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ViewFunctionShortModel.edmx</DependentUpon>
-      <LastGenOutput>ViewFunctionShortModel.cs</LastGenOutput>
+      <DependentUpon>DatabaseDBfull.edmx</DependentUpon>
+      <LastGenOutput>DatabaseDBfull.cs</LastGenOutput>
     </Content>
     <Content Include="Picture\Accounts\Journal.jpg" />
     <Content Include="Picture\Accounts\Ledger.jpg" />
@@ -227,19 +217,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\DB\ViewFunctionShortModel.edmx">
+    <EntityDeploy Include="Models\DB\DatabaseDBfull.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ViewFunctionShortModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseDBfull.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DB\ViewFunctionShortModel.edmx.diagram">
-      <DependentUpon>ViewFunctionShortModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\DB\Bookingdetail.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Bookingdetail.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DB\Bookingdetail.edmx.diagram">
-      <DependentUpon>Bookingdetail.edmx</DependentUpon>
+    <Content Include="Models\DB\DatabaseDBfull.edmx.diagram">
+      <DependentUpon>DatabaseDBfull.edmx</DependentUpon>
     </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
@@ -256,7 +239,6 @@
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="scripts\modernizr-2.8.3.js" />
     <Content Include="scripts\popper-utils.js" />
     <Content Include="scripts\popper-utils.min.js" />
     <Content Include="scripts\popper.js" />
@@ -344,10 +326,10 @@
     <Compile Include="Controllers\LoginModule\ChangePasswordController.cs" />
     <Compile Include="Controllers\LoginModule\LoginController.cs" />
     <Compile Include="Controllers\LoginModule\PasswordResetController.cs" />
-    <Compile Include="Controllers\Reservation\BookingFormController.cs" />
     <Compile Include="Controllers\Reservation\CustomerINFOController.cs" />
     <Compile Include="Controllers\Reservation\ReservationEventsmainController.cs" />
     <Compile Include="Controllers\Reservation\SendRequestForStockController.cs" />
+    <Compile Include="Controllers\Reservation\BookingNewRecordController.cs" />
     <Compile Include="Controllers\Stocks\AddnewStocksController.cs" />
     <Compile Include="Controllers\Stocks\BerveragesController.cs" />
     <Compile Include="Controllers\Stocks\DesertsController.cs" />
@@ -364,43 +346,50 @@
     <Compile Include="Models\Accounts\ViewVoucherList.cs" />
     <Compile Include="Models\Accounts\VoucherModel.cs" />
     <Compile Include="Models\ChnagePasswordModel.cs" />
+    <Compile Include="Models\BookingDetail.cs" />
+    <Compile Include="Models\DB\AdditionalFacilitiesandFunction.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\AdditionalFacility.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DB\Bookingdata.cs">
-      <DependentUpon>Bookingdetail.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DB\Bookingdetail.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bookingdetail.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DB\Bookingdetail.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bookingdetail.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DB\Bookingdetail.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bookingdetail.edmx</DependentUpon>
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\Customer.cs">
-      <DependentUpon>ViewFunctionShortModel.tt</DependentUpon>
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\ViewFunctionShortModel.Context.cs">
+    <Compile Include="Models\DB\DatabaseDBfull.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ViewFunctionShortModel.Context.tt</DependentUpon>
+      <DependentUpon>DatabaseDBfull.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\ViewFunctionShortModel.cs">
+    <Compile Include="Models\DB\DatabaseDBfull.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ViewFunctionShortModel.tt</DependentUpon>
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\ViewFunctionShortModel.Designer.cs">
+    <Compile Include="Models\DB\DatabaseDBfull.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ViewFunctionShortModel.edmx</DependentUpon>
+      <DependentUpon>DatabaseDBfull.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookingDetail.cs" />
+    <Compile Include="Models\DB\Dish.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Menu.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\MenuWithDish.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Program.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\ProgramsandMenu.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetresetLink.cs" />
     <Compile Include="Models\ItemsDetails.cs" />
     <Compile Include="Models\NewItemsadding.cs" />
     <Compile Include="Models\personalclass.cs" />
@@ -408,11 +397,17 @@
     <Compile Include="Models\Passwordresetmodel.cs" />
     <Compile Include="MVCGridBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CustomerView\AddCustomerClass.cs" />
+    <Compile Include="ViewModel\CustomerView\AdditionalfacilitiesINFO.cs" />
+    <Compile Include="ViewModel\CustomerView\AddNewFunction.cs" />
     <Compile Include="ViewModel\CustomerView\Bookingclass.cs" />
+    <Compile Include="ViewModel\CustomerView\BookingViewModel.cs" />
     <Compile Include="ViewModel\CustomerView\CustomerClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -421,7 +416,6 @@
     <Content Include="Views\ReservationEventsmain\Index.cshtml" />
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
-    <Content Include="Views\Shared\_LayoutReservation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutReservationmainpage.cshtml" />
     <Content Include="scripts\umd\popper.min.js.map" />
@@ -434,7 +428,6 @@
     <Content Include="scripts\popper.js.map" />
     <Content Include="scripts\popper-utils.min.js.map" />
     <Content Include="scripts\popper-utils.js.map" />
-    <Content Include="Views\BookingForm\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutReservationAddnewFunction.cshtml" />
     <Content Include="Views\Shared\_LayoutFunctionDetail.cshtml" />
     <Content Include="Views\Shared\combine\Header_name.cshtml" />
@@ -445,9 +438,6 @@
     <Content Include="Views\Shared\_LayoutStocksMeat.cshtml" />
     <Content Include="Views\Shared\combine\baratTabINFO.cshtml" />
     <Content Include="Views\Shared\combine\Mehndiinfo.cshtml" />
-    <Content Include="Views\Shared\combine\upperbodyoftabs.cshtml" />
-    <Content Include="Views\Shared\combine\DynamicMenu.cshtml" />
-    <Content Include="Views\Shared\combine\StaticMenuofBaratWalima.cshtml" />
     <Content Include="Views\Shared\combine\walimaTabINFO.cshtml" />
     <Content Include="Views\Shared\combine\partyTabINFO.cshtml" />
     <Content Include="Views\Shared\_LayoutReservationLogin.cshtml" />
@@ -465,9 +455,21 @@
     <Content Include="Views\CustomerINFO\Index.cshtml" />
     <Content Include="Views\SendRequestForStock\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAccountsLogin.cshtml" />
-    <Content Include="Views\Shared\_LayoutAccountsmainpage.cshtml" />
     <Content Include="Views\mainPageOf\Index.cshtml" />
     <Content Include="Views\AddnewStocks\Index.cshtml" />
+    <Content Include="Views\Login\ResetLinkforPassword.cshtml" />
+    <Content Include="Views\ReservationEventsmain\Alldetailoffunction.cshtml" />
+    <Content Include="Views\BookingForm\Index.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\BookingNewRecord\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutReservationmainLogin.cshtml" />
+    <Content Include="Views\Login\StockLogin.cshtml" />
+    <Content Include="Views\Shared\_LayoutAccountsmainpage.cshtml" />
+    <Content Include="Views\BookingNewRecord\CustomerInfoGet.cshtml" />
+    <Content Include="Views\BookingNewRecord\BaratFunctionGet.cshtml" />
+    <Content Include="Views\BookingNewRecord\WalimaFunctionGet.cshtml" />
+    <Content Include="Views\BookingNewRecord\PartyFunctionGet.cshtml" />
+    <Content Include="Views\BookingNewRecord\MehndiFunctionGet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

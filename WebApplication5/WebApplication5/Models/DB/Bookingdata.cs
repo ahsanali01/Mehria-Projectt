@@ -14,6 +14,12 @@ namespace WebApplication5.Models.DB
     
     public partial class Bookingdata
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Bookingdata()
+        {
+            this.AdditionalFacilitiesandFunctions = new HashSet<AdditionalFacilitiesandFunction>();
+        }
+    
         public int functionID { get; set; }
         public System.DateTime bookingDate { get; set; }
         public System.DateTime functionDate { get; set; }
@@ -27,5 +33,11 @@ namespace WebApplication5.Models.DB
         public int MenuId { get; set; }
         public int ProgramId { get; set; }
         public string CnicNo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AdditionalFacilitiesandFunction> AdditionalFacilitiesandFunctions { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Menu Menu { get; set; }
+        public virtual Program Program { get; set; }
     }
 }

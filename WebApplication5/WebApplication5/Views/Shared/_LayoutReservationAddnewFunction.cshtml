@@ -1,8 +1,4 @@
-﻿@model WebApplication5.Models.personalclass
-
-@using (Html.BeginForm())
-{
-	@Html.AntiForgeryToken()
+﻿
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,12 +25,10 @@
 
 	
 	<div class="container " style="margin-top:50px;">
-
-
-		
+	@RenderBody()
 		<div id="Gridtable">
 
-			@RenderBody();
+			
 			
 			<br />
 			<h2 class="control-label">FUNCTION INFORMATION</h2>
@@ -82,31 +76,40 @@
 			<div class="tab-content">
 				
 				<div id="home" class="tab-pane fade funcTab">
-					@RenderPage("~/Views/Shared/combine/Mehndiinfo.cshtml");
+					@{
+						Html.RenderPartial("MehndiFunctionGet");
+					}
+				@RenderPage("~/Views/Shared/combine/Mehndiinfo.cshtml");
+					
+
+
 						</div>
 
 				
 					<div id="menu1" class="tab-pane fade ">
-						
+						@{
+							Html.RenderPartial("BaratFunctionGet");
+						}
 						@RenderPage("~/Views/Shared/combine/baratTabINFO.cshtml");
 					</div>
 					<div id="menu2" class="tab-pane fade ">
-		
+	     	@{
+			Html.RenderPartial("WalimaFunctionGet");
+		     }
 						@RenderPage("~/Views/Shared/combine/WalimaTabINFO.cshtml");
 
 					</div>
 
 
 					<div id="menu4" class="tab-pane fade ">
+						@{
+							Html.RenderPartial("PartyFunctionGet");
+						}
 						@RenderPage("~/Views/Shared/combine/partyTabINFO.cshtml");
 				
 			</div>
 				</div>
-			<div class="form-group ">
-	<div class="col-md-offset-10 col-md-10 ">
-		<input type="submit" value="Submit" class="btn btn-default" />
-	</div>
-				</div>
+			
 		</div>
 
 
@@ -135,4 +138,3 @@
 
 </body>
 </html>
-}

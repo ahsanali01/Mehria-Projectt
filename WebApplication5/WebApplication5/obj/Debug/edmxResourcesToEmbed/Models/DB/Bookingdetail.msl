@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MehriamarqueeModelStoreContainer" CdmEntityContainer="MehriamarqueeEntities4">
+  <EntityContainerMapping StorageEntityContainer="MehriamarqueeModelStoreContainer" CdmEntityContainer="MehriamarqueeEntities7">
     <EntitySetMapping Name="Bookingdatas">
       <EntityTypeMapping TypeName="MehriamarqueeModel.Bookingdata">
         <MappingFragment StoreEntitySet="Bookingdata">

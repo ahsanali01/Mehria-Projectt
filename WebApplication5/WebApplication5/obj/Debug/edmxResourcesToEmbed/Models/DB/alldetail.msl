@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MehriamarqueeModel2StoreContainer" CdmEntityContainer="MehriamarqueeEntities1">
+    <EntitySetMapping Name="AdditionalFacilities">
+      <EntityTypeMapping TypeName="MehriamarqueeModel2.AdditionalFacility">
+        <MappingFragment StoreEntitySet="AdditionalFacilities">
+          <ScalarProperty Name="additionalID" ColumnName="additionalID" />
+          <ScalarProperty Name="additionalName" ColumnName="additionalName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookingdatas">
+      <EntityTypeMapping TypeName="MehriamarqueeModel2.Bookingdata">
+        <MappingFragment StoreEntitySet="Bookingdata">
+          <ScalarProperty Name="functionID" ColumnName="functionID" />
+          <ScalarProperty Name="bookingDate" ColumnName="bookingDate" />
+          <ScalarProperty Name="functionDate" ColumnName="functionDate" />
+          <ScalarProperty Name="noofGuest" ColumnName="noofGuest" />
+          <ScalarProperty Name="rateperGuest" ColumnName="rateperGuest" />
+          <ScalarProperty Name="stagesCharges" ColumnName="stagesCharges" />
+          <ScalarProperty Name="basics_others" ColumnName="basics_others" />
+          <ScalarProperty Name="Extras" ColumnName="Extras" />
+          <ScalarProperty Name="TotalCharges" ColumnName="TotalCharges" />
+          <ScalarProperty Name="timeShift" ColumnName="timeShift" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="CnicNo" ColumnName="CnicNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="MehriamarqueeModel2.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CnicNo" ColumnName="CnicNo" />
+          <ScalarProperty Name="customerName" ColumnName="customerName" />
+          <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="MehriamarqueeModel2.Dish">
+        <MappingFragment StoreEntitySet="Dishes">
+          <ScalarProperty Name="dishID" ColumnName="dishID" />
+          <ScalarProperty Name="dishName" ColumnName="dishName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="MehriamarqueeModel2.Menu">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="menuID" ColumnName="menuID" />
+          <ScalarProperty Name="menuName" ColumnName="menuName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programs">
+      <EntityTypeMapping TypeName="MehriamarqueeModel2.Program">
+        <MappingFragment StoreEntitySet="Programs">
+          <ScalarProperty Name="programID" ColumnName="programID" />
+          <ScalarProperty Name="programName" ColumnName="programName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

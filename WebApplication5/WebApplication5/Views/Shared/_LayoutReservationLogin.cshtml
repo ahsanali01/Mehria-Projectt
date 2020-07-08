@@ -6,7 +6,7 @@
 	</head>
 
 					<div class="modal  fade" id="reservelogin" tabindex="-1">
-						<div class="modal-dialog  " style="margin-top:13%">
+						<div class="modal-dialog">
 							<div class="modal-content modal-content1">
 								<div class="modal-header modal-header1 modal-open ">
 									<div class="img  img1">
@@ -15,6 +15,7 @@
 									<div class="modal-body modal-body1" style="padding:15px">
 										<form id="form1" >
 
+										
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
@@ -34,21 +35,30 @@
 
 				<span><img src="~/Picture/images/password.png"></span>
 				@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password", type = "password" } })
-				<span class="input-box " style="margin-left:80%" id="eye"><img id="btnShowpasswrd" src="~/Picture/images/icons8-show-password-80.png" /></span>
+				<span class="input-box " style="margin-left:56%" id="eye"><img id="btnShowpasswrd" src="~/Picture/images/icons8-show-password-80.png" /></span>
 														
 														
 				</div>
 												
 			    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-label  " })
+
+
 			   <div class="forget-link"  style="display:flex; justify-content:space-around;">
-				@Html.EditorFor(model => model.Rememberme)
-													
-				<div class="form-check" style="margin-top:5%;">	
-												
-				@Html.LabelFor(model => model.Rememberme, htmlAttributes: new { @class = "control-label col-md-2 label" })		
+				   <div>
+					   @Html.EditorFor(model => model.Rememberme)
+				   
+	   	@Html.ValidationMessageFor(model => model.Rememberme, "Remember me", new { @class = "text-danger" })
+				   </div>
+
+				<div>
+
+
+					<a href='@Url.Action("ResetLinkforPassword","Login")'>Reset Password</a>
+
 				</div>
-				@Html.ValidationMessageFor(model => model.Rememberme, "", new { @class = "text-danger" })
-				<a href='@Url.Action("GetPasswordform","PasswordReset")'>Reset Password</a>
+													
+			
+				
 												
 				</div>
 				<div class="button-box form-group">

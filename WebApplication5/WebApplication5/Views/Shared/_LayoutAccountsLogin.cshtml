@@ -1,15 +1,15 @@
 ﻿
 @model WebApplication5.Models.ModelofLogin
 <head>
-	<script src="~/scripts/ShowPassword.js"></script>
+	
 	<link href="~/Content/acco_CSS.css" rel="stylesheet" />
 	
 	</head>
 
 	
 <div class="modal  fade" id="accountlogin" tabindex="-1">
-	<div class="modal-dialog  " style="margin-top:13%">
-		<div class="modal-content ">
+	<div class="modal-dialog">
+		<div class="modal-content6 ">
 			<div class="modal-header  modal-open ">
 				<div class="img">
 					<img class="img-responsive" src="~/Picture/images/acc1.png" width="250" height="60">
@@ -45,7 +45,7 @@
 										@Html.LabelFor(model => model.Rememberme, htmlAttributes: new { @class = "control-label col-md-2 label" })
 									</div>
 									@Html.ValidationMessageFor(model => model.Rememberme, "", new { @class = "text-danger" })
-									<button class="btn" onclick="location.href='@Url.Action("GetPasswordform","PasswordReset")'">Reset Password</button>
+									<button class="btn" onclick="location.href='@Url.Action("ResetLinkforPassword","Login")'">Reset Password</button>
 								</div>
 								<div class="button-box form-group">
 

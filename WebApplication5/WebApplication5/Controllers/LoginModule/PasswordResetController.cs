@@ -10,23 +10,25 @@ namespace WebApplication5.Controllers.LoginModule
 {
     public class PasswordResetController : Controller
     {
-
         // GET: PasswordReset
         [HttpGet]
         public ActionResult GetPasswordform()
         {
             return View();
         }
-        [HttpPost, ValidateAntiForgeryToken]
+
+       
+        [HttpPost]
         public ActionResult GetPasswordform(Passwordresetmodel reset)
         {
+            var data = TempData["mydata"] as string;
             
-            if (reset.username == "Stocker" || reset.username == "Booker")
+            if (reset.Token == data )
             {
-                var result = WebSecurity.GeneratePasswordResetToken(reset.username, 1440);
+                
 
-                WebSecurity.ResetPassword(result, reset.newPassword);
-                return RedirectToAction("Index", "Login");
+                WebSecurity.ResetPassword(reset.Token, reset.newPassword);
+                return RedirectToAction("Index","Login");
             }
             else
             {
