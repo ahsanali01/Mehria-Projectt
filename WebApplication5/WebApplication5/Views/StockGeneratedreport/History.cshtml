@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.QuantityupdatedItemtable>
+@using WebApplication5.Models.DB;
+@{
+	ViewBag.Title = "History";
+	Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+	IEnumerable<QuantityupdatedDeserttable> historyofDesert = ViewData["quaDese"] as IEnumerable<QuantityupdatedDeserttable>;
+	IEnumerable<QuantityupdateBeveragestable> historyfBeverage = ViewData["quaBeve"] as IEnumerable<QuantityupdateBeveragestable>;
+}
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","StocksDetail")'"></button>
+
+
+<h2 class="label-success" style="display:flex; justify-content:center; color:white ">History</h2>
+
+
+<table class="table">
+    <tr>
+       
+        <th>
+            Item Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Item.itemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+    </tr>
+}
+	@foreach (var item in historyfBeverage)
+	{
+		<tr>
+			
+			<td>
+				@Html.DisplayFor(modelItem => item.Beverage.beveragesName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Date)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Quantity)
+			</td>
+			
+		</tr>
+	}
+
+	@foreach (var item in historyofDesert)
+	{
+		<tr>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.Desert.desertName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Date)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Quantity)
+			</td>
+
+		</tr>
+	}
+
+</table>

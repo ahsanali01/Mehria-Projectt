@@ -1,0 +1,140 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.AdditionalFacilitiesandFunction>
+@using WebApplication5.Models.DB;
+
+@{
+	ViewBag.Title = "additionalINFo";
+	Layout = "~/Views/Shared/_LayoutReservationChangesPrint.cshtml";
+	IEnumerable<Bookingdata> functionReport = ViewData["book"] as IEnumerable<Bookingdata>;
+}
+<script type="text/javascript">
+
+	function PrintDiv() {
+		document.getElementById("printbtn").style.display = 'none'
+		window.print()
+		window.close()
+	}
+</script>
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","ReservationEventsmain")'"></button> 
+<h2 class="label-success" style="display:flex;justify-content:center">Function Detail</h2>
+
+
+<table class="table table-bordered table-responsive table-condensed ">
+	<tr rowspan="2">
+
+
+		<th>
+			Booking Date
+		</th>
+		<th>
+			Function Date
+		</th>
+		<th>
+			No of Guest
+		</th>
+		<th>
+			Rate Per Guest
+		</th>
+		<th>
+			Advance Payment
+		</th>
+		<th>
+			Remaining Payment
+		</th>
+		<th>
+			Extras
+		</th>
+		<th>
+			Total Charges
+		</th>
+		<th>
+			TimeShift
+		</th>
+
+		<th>
+			Menu Name
+		</th>
+
+		<th>
+			Program Name
+		</th>
+
+
+	</tr>
+
+	@foreach (var item in functionReport)
+	{
+
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.bookingDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.functionDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.noofGuest)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.rateperGuest)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.AdvancePayment)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.RemainingPayment)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Extras)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TotalCharges)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.timeShift)
+			</td>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.Menu.menuName)
+			</td>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.Program.programName)
+			</td>
+
+
+		</tr>
+
+	}
+
+</table>
+<h4 class="label-success" style="display:flex;justify-content:center">Additional Facilities Detail</h4>
+<table class="table table-bordered table-responsive table-condensed">
+	<tr>
+
+		<th>
+			@Html.DisplayNameFor(model => model.AdditionalFacility.additionalName)
+		</th>
+
+		<th>
+			@Html.DisplayNameFor(model => model.additionalFacilityPrice)
+		</th>
+
+	</tr>
+
+	@foreach (var item in Model)
+	{
+
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.AdditionalFacility.additionalName)
+			</td>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.additionalFacilityPrice)
+			</td>
+		
+		</tr>
+	}
+
+</table>
+<input type="button" id="printbtn" style="display:flex; justify-content:flex-end" onclick="PrintDiv()" value="Print" />   

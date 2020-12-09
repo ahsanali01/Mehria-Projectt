@@ -9,7 +9,7 @@ namespace WebApplication5.Controllers.Accounts
     public class mainPageOfController : Controller
     {
         // GET: mainPageOf
-        [Authorize]
+        [Authorize(Roles = "Accountant")]
         public ActionResult Index()
         {
             return View();

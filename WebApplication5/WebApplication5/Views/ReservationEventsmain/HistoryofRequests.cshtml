@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.Bookingdata>
+
+@{
+    ViewBag.Title = "HistoryofRequests";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","ReservationEventsmain")'"></button>
+<h2 class="label-success" style="display:flex; justify-content:center">Requests History</h2>
+
+<table class="table table-bordered table-striped table-responsive table-hover">
+    <tr>
+      
+        <th>
+            Booking Date
+        </th>
+        <th>
+            Function Date
+        </th>
+        <th>
+            No of Guest
+        </th>
+        <th>
+            Rate Per Guest
+        </th>
+        <th>
+            Advance Payment
+        </th>
+        <th>
+            Remaining Payment
+        </th>
+        <th>
+            Extras
+        </th>
+        <th>
+            Total Charges
+        </th>
+        <th>
+            Time Shift
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.bookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.functionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.noofGuest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rateperGuest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdvancePayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemainingPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCharges)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeShift)
+        </td>
+    </tr>
+}
+
+</table>

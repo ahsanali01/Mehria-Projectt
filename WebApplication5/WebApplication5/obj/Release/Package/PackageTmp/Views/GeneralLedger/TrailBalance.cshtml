@@ -1,0 +1,106 @@
+﻿
+@model IEnumerable<WebApplication5.Models.DB.Account>
+
+@{
+	ViewBag.Title = "TrailBalance";
+	Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<h2 class="label-success" style="display:flex; justify-content:center; color:white">Trail Balance</h2>
+<h3 style="display:flex; justify-content:center">@ViewBag.FromDate-To-@ViewBag.ToDate</h3>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	<div class="row">
+
+		@Html.Label("From Date", new { @class = "control-label col-sm-2" })
+		<div class="col-lg-4">
+			@Html.TextBox("FromDate", null, new { @class = "form-control", @Type = "date" })
+		</div>
+
+
+
+		@Html.Label("To Date", new { @class = "control-label col-sm-2" })
+		<div class="col-lg-4">
+			@Html.TextBox("ToDate", null, new { @class = "form-control", @Type = "date" })
+		</div>
+	</div>
+	<br />
+		<div class="row">
+			<div class="col-md-2">
+				<input type="submit" value="Search" class="btn-lg btn-primary right" />
+			</div>
+		</div>
+
+
+}
+<br />
+<table class="table">
+	<tr>
+
+		<th>
+			Account Name
+		</th>
+	
+		<th>
+			Credit
+		</th>
+
+		<th>
+			Debit
+		</th>
+
+
+	</tr>
+	
+	
+	
+	@{int i = 0;
+		
+	}
+	@if (@ViewBag.totalbalanceforcredit != null)
+		{
+
+			foreach (var item in Model)
+			{
+
+
+					<tr>
+						<td>
+							@Html.DisplayFor(modelItem => item.accountName)
+						</td>
+
+						<td>
+							@ViewBag.totalbalanceforcredit[i]
+						</td>
+						<td>
+							@ViewBag.totalbalancefordebit[i]
+						</td>
+
+					</tr>
+
+			i++;
+
+		}
+		<tr>
+			<th>Balance</th>
+			<th>@ViewBag.totalsumCreditbalance</th>
+			<th>@ViewBag.totalsumdebitbalance</th>
+		</tr>
+	}
+
+</table>
+
+
+
+@{
+	if (TempData["message"] != null)
+	{
+		<script type="text/javascript">
+        alert(@Html.Raw(Json.Encode(TempData["message"])));
+		</script>
+	}
+}
+
+

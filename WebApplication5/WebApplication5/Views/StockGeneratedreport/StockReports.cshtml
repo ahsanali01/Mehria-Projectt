@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApplication5.ViewModel.CustomerView.CheckFunctionRequestViewModel>
+
+@{
+    ViewBag.Title = "StockReports";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+@if (@User.Identity.Name == "Stocker")
+{
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index", "StocksDetail")'"></button>
+}
+else
+{
+	<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index", "mainPageOf")'"></button>
+}
+<h2 class="label-success" style="display:flex; justify-content:center; color:white">Stock Reports</h2>
+
+
+<table class="table">
+    <tr>
+    
+        <th>
+          Request Date
+        </th>
+        <th>
+           Booking Date
+        </th>
+        <th>
+            Function Date
+        </th>
+		<th>
+		    No Of Guests
+		</th>
+		<th>
+		   Rate Per Guest
+		</th>
+        <th>
+           Menu Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Reverse()) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.requestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.functionDate)
+        </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.noofGuests)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.rateperGuest)
+		</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.menuName)
+        </td>
+        <td>
+			@Html.ActionLink("View Stocks Report","StockReportsPost", "StockGeneratedreport", new { getIDrequest=item.requestID },null)    
+        </td>
+    </tr>
+}
+
+</table>

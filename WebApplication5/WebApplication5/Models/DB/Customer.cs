@@ -20,9 +20,10 @@ namespace WebApplication5.Models.DB
             this.Bookingdatas = new HashSet<Bookingdata>();
         }
     
-        public string CnicNo { get; set; }
+        public int customerID { get; set; }
+        public long CnicNo { get; set; }
         public string customerName { get; set; }
-        public string mobileNo { get; set; }
+        public long mobileNo { get; set; }
         public string address { get; set; }
         public string remarks { get; set; }
     

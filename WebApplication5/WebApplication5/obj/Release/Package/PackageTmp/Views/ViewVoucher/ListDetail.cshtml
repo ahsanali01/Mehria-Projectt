@@ -1,0 +1,116 @@
+﻿@model IEnumerable<WebApplication5.Models.Accounts.ListofVoucherdetail>
+
+@{
+    ViewBag.Title = "ListDetail";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<h2>ListDetail</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.voucherDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VoucherNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.narration)
+        </th>
+		<td>
+		<td>
+		</td>
+    </tr>
+	<tr>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			10101
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			10101
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			10101
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			24/05/2020
+		</td>
+		<td>
+			10101
+		</td>
+		<td>
+			Owner started bussiness with cash 250000
+		</td>
+
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+			@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+		</td>
+	</tr>
+
+@*@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.voucherDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoucherNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.narration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}*@
+
+</table>

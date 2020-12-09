@@ -17,16 +17,16 @@ namespace WebApplication5.Models.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Program()
         {
-            this.Bookingdatas = new HashSet<Bookingdata>();
             this.ProgramsandMenus = new HashSet<ProgramsandMenu>();
+            this.Bookingdatas = new HashSet<Bookingdata>();
         }
     
         public int programID { get; set; }
         public string programName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bookingdata> Bookingdatas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProgramsandMenu> ProgramsandMenus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bookingdata> Bookingdatas { get; set; }
     }
 }

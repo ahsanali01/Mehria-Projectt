@@ -1,0 +1,96 @@
+﻿@model WebApplication5.Models.ModelofLogin
+<head>
+
+	<link href="~/Content/acco_CSS.css" rel="stylesheet" />
+
+</head>
+
+<script>
+	function myFunctionofaccount() {
+		var x = document.getElementById("myInput");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	}
+</script>
+
+	<div class="modal-dialog">
+		<div class="modal-content6 ">
+			<div class="modal-header  modal-open ">
+				<div class="img">
+					<img class="img-responsive" src="~/Picture/images/acc1.png" width="250" height="60">
+				</div>
+				<div class="modal-body" style="padding:15px">
+					<form>
+						@using (Html.BeginForm())
+						{
+							@Html.AntiForgeryToken()
+
+
+							@Html.ValidationSummary(true, "", new { @class = "text-danger", @style = "color:white" })
+							<div class="form-filed">
+								@Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-label  ", @style = "color:white" })
+								<div class="input-box mail form-group">
+
+									<span><img src="~/Picture/images/envolpe.png"></span>@Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control ", @placeholder = "Username" } })
+								</div>
+							@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-label", @style = "color:white" })
+
+								<div class="input-box password form-group">
+
+									<span><img src="~/Picture/images/password.png"></span>
+									@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @id = "myInput", @placeholder = "Password", type = "password" } })
+									<span class="input-box " style="margin-left:80%" id="eye"><img onclick="myFunctionofaccount()" src="~/Picture/images/icons8-show-password-80.png" /></span>
+								</div>
+								
+
+								<div class="forget-link form-check" style="display:flex; justify-content:space-around; padding-left:35%;">
+							
+
+									
+										<div>
+											@Html.EditorFor(model => model.Rememberme)
+											</div>
+										<div>
+											@Html.ValidationMessageFor(model => model.Rememberme, " Remember me ", new { @class = "control-label  label" })
+										</div>
+										<div>
+											<button class="btn" style="color:white" onclick="location.href='@Url.Action("ResetLinkforPassword","Login")'">Reset Password</button>
+										</div>
+								</div>
+									
+									
+								
+								<div class="button-box form-group">
+
+									<input id="button" type="submit" value="Login" class="btn btn-default" />
+								</div>
+							</div>
+						}
+					</form>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+@{
+	if (TempData["message"] != null)
+	{
+		<script type="text/javascript">
+        alert(@Html.Raw(Json.Encode(TempData["message"])));
+		</script>
+	}
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/scripts/ShowPassword.js"></script>
+
+
+
+

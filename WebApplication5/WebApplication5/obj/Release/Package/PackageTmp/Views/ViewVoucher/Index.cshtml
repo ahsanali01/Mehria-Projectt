@@ -1,0 +1,100 @@
+﻿@model IEnumerable<WebApplication5.Models.Accounts.VoucherModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<h2>VOUCHER LIST</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.voucherType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VoucherNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.narration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.voucherDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payee_payer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.billNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chqNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chqDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.credit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.voucherType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoucherNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.narration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.voucherDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payee_payer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.billNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chqNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chqDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.credit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

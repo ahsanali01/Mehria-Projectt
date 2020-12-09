@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+
+	
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/headerhover.css" rel="stylesheet" />
+	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<header>
+		@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
+	</header>
+	<div class="" style="margin-top:50px;">
+
+		@RenderBody();
+		<div style="padding-left:50px;padding-right:50px;">
+			<img class="img-responsive img-rounded" src="~/Picture/images/cntct.png" width="1350" height="140" />
+		</div>
+		<br />
+		<br />
+		<h1 class="label-success" style="display:flex; justify-content:center; color:white;">CONTACT LIST</h1>
+		
+
+			<table class="table table-bordered table-condensed table-hover table-responsive table-striped" style="display:flex; justify-content:center; padding-left:100px;padding-right:100px;">
+				<tr>
+					<th>Vendor Name</th>
+					<th>Contact Number</th>
+				</tr>
+				<tr>
+					<td>Nasir Pepsi</td>
+					<td>03214573889</td>
+				</tr>
+				<tr>
+					<td>Alazam poultry</td>
+					<td>923152927437</td>
+				</tr>
+				<tr>
+					<td>Adil zahoor Ice Cream </td>
+					<td>03125634899</td>
+				</tr>
+				<tr>
+					<td>Hamza 7up</td>
+					<td>03214896889</td>
+				</tr>
+				<tr>
+					<td>Imran Decorator</td>
+					<td>03437874567</td>
+				</tr>
+				<tr>
+					<td>Daniyal labour</td>
+					<td>03034573889</td>
+				</tr>
+			</table>
+			
+		
+
+
+
+
+
+
+
+
+
+
+		<hr />
+
+	</div>
+
+
+		<footer class="footer">
+
+			@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+		</footer>
+		<script src="~/scripts/Calenderbuiltin.js"></script>
+		<script src="~/scripts/Gridview.js"></script>
+		<script src="~/scripts/popup.js"></script>
+		<script src="~/scripts/jquery-3.4.1.js"></script>
+		<script src="~/scripts/bootstrap.js"></script>
+
+
+
+</body>
+</html>

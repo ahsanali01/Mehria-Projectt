@@ -27,7 +27,7 @@ namespace WebApplication5.Controllers.LoginModule
 
             if (ispasswordChnaged)
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("MainPageofIndex", "Login");
             }
 
             else

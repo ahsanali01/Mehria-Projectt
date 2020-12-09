@@ -1,0 +1,72 @@
+﻿!DOCTYPE html>
+<html>
+<head>
+
+
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title</title>
+	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/headerhover.css" rel="stylesheet" />
+	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
+	<script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<header>
+		@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
+	</header>
+	<br />
+	<br />
+	<div class="container ">
+
+		<br />
+	<h1 class="label-success" style="display:flex; justify-content:center; color:white">REPORTS</h1>
+		<br />
+		<br />
+		<br />
+		<div class="buttnsacc">
+			<div>
+				<button class="mainbtnacct" onclick="window.open('@Url.Action("TrailBalance","GeneralLedger")')">Trail Balance</button>
+			</div>
+			<div>
+				<button class="mainbtnacct" onclick="window.open('@Url.Action("IncomeStatement","GeneralLedger")')">Income Statement</button>
+			</div>
+			<div>
+				<button class="mainbtnacct" onclick="window.open('@Url.Action("Statementofownerequity","GeneralLedger")')">Statement of owner equity</button>
+			</div>
+			<div>
+				<button class="mainbtnacct" onclick="window.open('@Url.Action("BalanceSheet","GeneralLedger")')">Balance Sheet</button>
+			</div>
+
+		</div>
+		<div id="Gridtable">
+
+			@RenderBody();
+		</div>
+
+
+
+
+	</div>
+
+	<hr />
+
+
+
+
+	<footer class="footer">
+
+		@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+	</footer>
+	<script src="~/scripts/Gridview.js"></script>
+	<script src="~/scripts/popup.js"></script>
+	<script src="~/scripts/jquery-3.4.1.js"></script>
+	<script src="~/scripts/bootstrap.js"></script>
+
+
+
+</body>
+</html>

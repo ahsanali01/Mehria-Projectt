@@ -1,0 +1,69 @@
+﻿@model WebApplication5.Models.DB.Beverage
+
+@{
+    ViewBag.Title = "UpdateBeverages";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<h2 class="label-success" style="display:flex; justify-content:center; color:white">Update Quantity</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+      
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.beverageId)
+
+        <div class="form-group">
+            @Html.Label("Beverages Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.beveragesName, new { htmlAttributes = new { @class = "form-control", @Readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.beveragesName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Sale Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.beveragesSalePrice, new { htmlAttributes = new { @class = "form-control", @Readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.beveragesSalePrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+        @Html.Label("Purchase Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.beveragesPurchasePrice, new { htmlAttributes = new { @class = "form-control", @Readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.beveragesPurchasePrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Quantity Of Beverages", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.quantityOfBeverages, new { htmlAttributes = new { @class = "form-control",@Readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.quantityOfBeverages, "", new { @class = "text-danger" })
+            </div>
+        </div>
+		<div class="form-group">
+			@Html.Label("","Update Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.TextBox("UpdatedQuantity",null,new { @class = "form-control" } )
+				@Html.ValidationMessageFor(model => model.quantityOfBeverages, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "ViewBeverages")
+</div>

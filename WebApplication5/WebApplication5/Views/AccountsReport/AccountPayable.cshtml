@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "AccountPayable";
+    Layout = "~/Views/Shared/_Layoutforstatement.cshtml";
+}
+<script type="text/javascript">
+
+        function PrintDiv() {
+        	document.getElementById("printbtn").style.display = 'none'
+        	document.getElementById("all").style.display = 'none'
+        	
+        	    window.print()
+        	    window.close()
+
+        }
+</script> 
+<br />
+
+<h2 style="display:flex; justify-content:center"> Account payable</h2>
+<h3 style="display:flex; justify-content:center">@ViewBag.FromDate-To-@ViewBag.ToDate</h3>
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	<div class="row" id="all">
+
+		@Html.Label("From Date", new { @class = "control-label col-sm-2" })
+		<div class="col-lg-4">
+			@Html.TextBox("FromDate", null, new { @class = "form-control",@Type = "date" })
+		</div>
+
+
+
+		@Html.Label("To Date", new { @class = "control-label col-sm-2" })
+		<div class="col-lg-4">
+			@Html.TextBox("ToDate", null, new { @class = "form-control", @Type = "date" })
+		</div>
+	</div>
+	<br />
+	<div class="row" id="all">
+		<div class="col-md-2">
+			<input type="submit" value="Search" class="btn btn-primary right" />
+		</div>
+	</div>
+
+
+}
+<br />
+<br />
+@if (ViewBag.totaaccountpayable != 0)
+{
+	if (ViewBag.totaaccountpayable >= 0)
+	{
+		<div class="row" style="margin-left:20%">
+			<div class="col-lg-6">
+				<h4 style="font-weight:bold">ACCOUNT PAYABLE</h4>
+
+			</div>
+			<div class="col-lg-6">
+
+				<h4 style="font-weight:bold">@ViewBag.totaaccountpayable (Credit)</h4>
+			</div>
+		</div>
+
+	}
+	else
+	{
+		<div class="row" style="margin-left:20%">
+			<div class="col-lg-6">
+				<h4 style="font-weight:bold">ACCOUNT PAYABLE</h4>
+
+			</div>
+			<div class="col-lg-6">
+
+				<h4 style="font-weight:bold">@ViewBag.totaaccountpayable (Debit)</h4>
+			</div>
+		</div>
+
+	}
+
+
+
+
+}
+else
+{
+	<h4 style="display:flex; justify-content:center">No Recoed Found</h4>
+}
+
+
+
+
+
+<input type="button" id="printbtn" style="display:flex; justify-content:flex-end" onclick="PrintDiv()" value="Print" />  

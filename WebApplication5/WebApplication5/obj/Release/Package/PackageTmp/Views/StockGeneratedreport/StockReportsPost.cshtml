@@ -1,0 +1,250 @@
+﻿@model IEnumerable<WebApplication5.ViewModel.CustomerView.StockReportClass>
+@using WebApplication5.ViewModel.CustomerView;
+@{
+	ViewBag.Title = "StockReportsPost";
+	Layout = "~/Views/Shared/_LayoutReservationChangesPrint.cshtml";
+
+	IEnumerable<StockItemReportClass> ItemReport = ViewData["Request"] as IEnumerable<StockItemReportClass>;
+	IEnumerable<StockDesertReportClass> DesertReport = ViewData["DesertRequest"] as IEnumerable<StockDesertReportClass>;
+	IEnumerable<StockBeveragesClass> BeverageReport = ViewData["BeverageRequest"] as IEnumerable<StockBeveragesClass>;
+}
+<script type="text/javascript">
+
+        function PrintDiv() {
+        	document.getElementById("printbtn").style.display = 'none'
+        	    window.print()
+        	    window.close()
+
+        }
+</script> 
+
+<h2 class="label-danger" style="display:flex; justify-content:center; color:white">Stocks Report</h2>
+<div id="printdivcontent" style="border: 1px dotted black; text-align: center;">
+
+	<table class="table table-bordered table-responsive table-condensed " >
+		<tr rowspan="2">
+
+
+			<th>
+				Booking Date
+			</th>
+			<th>
+				Function Date
+			</th>
+			<th>
+				No of Guest
+			</th>
+			<th>
+				Rate Per Guest
+			</th>
+			<th>
+				Advance Payment
+			</th>
+			<th>
+				Remaining Payment
+			</th>
+			<th>
+				Extras
+			</th>
+			<th>
+				Total Charges
+			</th>
+			<th>
+				TimeShift
+			</th>
+
+			<th>
+				Menu Name
+			</th>
+
+			<th>
+				Program Name
+			</th>
+			<th>
+				Request Date
+			</th>
+
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			if (item.requestID == ViewBag.getIDrequest)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.bookingDate)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.functionDate)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.noofGuest)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.rateperGuest)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.AdvancePayment)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.RemainingPayment)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Extras)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.TotalCharges)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.timeShift)
+					</td>
+
+					<td>
+						@Html.DisplayFor(modelItem => item.menuName)
+					</td>
+
+					<td>
+						@Html.DisplayFor(modelItem => item.programName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.requestDate)
+					</td>
+
+				</tr>
+			}
+		}
+
+	</table>
+	<h2 class="label-danger" style="color:white">Item Stocks Used in Function</h2>
+	<table class="table table-bordered table-responsive table-condensed" style="display:flex; justify-content:center;">
+		<tr>
+			<th>
+				Dish Name
+			</th>
+			<th>
+				Item Name
+			</th>
+			<th>
+				Price of Item
+			</th>
+			<th>
+				Quantity of Item
+			</th>
+
+		</tr>
+
+		@foreach (var item in ItemReport)
+		{
+			if (item.requestID == ViewBag.getIDrequest)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.dishName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.itemName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.priceOfItems)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.qunatityOfItems)
+					</td>
+
+
+				</tr>
+			}
+
+
+
+		}
+
+	</table>
+	<h2 class="label-danger" style="color:white">Deserts Stocks Used in Function</h2>
+	<table class="table table-bordered table-responsive table-condensed" style="display:flex; justify-content:center;">
+		<tr>
+			<th>
+				Dish Name
+			</th>
+			<th>
+				Desert Name
+			</th>
+			<th>
+				Price of Desert
+			</th>
+			<th>
+				Quantity of Desert
+			</th>
+
+		</tr>
+
+		@foreach (var item in DesertReport)
+		{
+			if (item.requestID == ViewBag.getIDrequest)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.dishName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.desertName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.PriceDesert)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.quantityDesert)
+					</td>
+
+
+				</tr>
+			}
+
+
+		}
+
+	</table>
+	<h2 class="label-danger" style="color:white">Beverages Stocks Used in Function</h2>
+	<table class="table table-bordered table-responsive table-condensed" style="display:flex; justify-content:center;">
+		<tr>
+			<th>
+				Dish Name
+			</th>
+			<th>
+				Beverage Name
+			</th>
+			<th>
+				Price of Beverage
+			</th>
+			<th>
+				Quantity of Beverage
+			</th>
+
+		</tr>
+
+		@foreach (var item in BeverageReport)
+		{
+			if (item.requestID == ViewBag.getIDrequest)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.dishName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.beveragesName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.PriceBeverages)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.quantityBeverages)
+					</td>
+
+
+				</tr>}
+
+		}
+
+	</table>
+</div>
+<input type="button" id="printbtn" style="display:flex; justify-content:flex-end"  onclick="PrintDiv()" value="Print" />     

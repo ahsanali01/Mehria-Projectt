@@ -1,0 +1,145 @@
+﻿@model WebApplication5.ViewModel.CustomerView.AddNewFunction
+
+
+
+@using (Html.BeginForm("WalimaFunctionPost", "BookingNewRecord", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+
+
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<br />
+	<div class="row">
+
+		@Html.LabelFor(model => model.bookingDate, htmlAttributes: new { @class = "control-label col-xs-1" })
+		<div class="form-group col-lg-3 ">
+
+
+			@Html.EditorFor(model => model.bookingDate, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.bookingDate, "", new { @class = "text-danger" })
+		</div>
+
+
+
+		@Html.LabelFor(model => model.functionDate, htmlAttributes: new { @class = "control-label col-xs-1" })
+		<div class="form-group col-lg-3 ">
+
+
+			@Html.EditorFor(model => model.functionDate, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.functionDate, "", new { @class = "text-danger" })
+
+		</div>
+
+		@Html.LabelFor(model => model.noofGuest, htmlAttributes: new { @class = "control-label col-xs-1" })
+
+		<div class="form-group col-lg-3 ">
+
+
+			@Html.EditorFor(model => model.noofGuest, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.noofGuest, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		@Html.LabelFor(model => model.rateperGuest, htmlAttributes: new { @class = "control-label col-xs-1" })
+		<div class="form-group col-lg-3">
+
+
+			@Html.EditorFor(model => model.rateperGuest, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.rateperGuest, "", new { @class = "text-danger" })
+
+		</div>
+		@Html.LabelFor(model => model.stagesCharges, htmlAttributes: new { @class = "control-label col-xs-1" })
+		<div class="form-group col-lg-3">
+
+
+			@Html.EditorFor(model => model.stagesCharges, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.stagesCharges, "", new { @class = "text-danger" })
+
+		</div>
+		@Html.LabelFor(model => model.basics_others, htmlAttributes: new { @class = "control-label col-xs-1" })
+		<div class="form-group col-lg-3">
+
+
+			@Html.EditorFor(model => model.basics_others, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.basics_others, "", new { @class = "text-danger" })
+
+		</div>
+	</div>
+	<br />
+
+		<div class="row">
+			@Html.LabelFor(model => model.Extras, htmlAttributes: new { @class = "control-label col-xs-1" })
+			<div class="form-group col-lg-3">
+
+
+				@Html.EditorFor(model => model.Extras, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Extras, "", new { @class = "text-danger" })
+
+			</div>
+			@Html.LabelFor(model => model.TotalCharges, htmlAttributes: new { @class = "control-label col-xs-1" })
+			<div class="form-group col-lg-3">
+
+
+				@Html.EditorFor(model => model.TotalCharges, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.TotalCharges, "", new { @class = "text-danger" })
+
+			</div>
+
+
+			@Html.LabelFor(model => model.MenuId, htmlAttributes: new { @class = "control-label col-xs-1" })
+
+			<div class="form-group col-lg-3">
+
+
+				@Html.EditorFor(model => model.MenuId, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.MenuId, "", new { @class = "text-danger" })
+
+			</div>
+		</div>
+		<br />
+			<div class="row">
+				@Html.LabelFor(model => model.ProgramId, htmlAttributes: new { @class = "control-label col-xs-1" })
+				<div class="form-group col-lg-3">
+
+
+					@Html.EditorFor(model => model.ProgramId, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.ProgramId, "", new { @class = "text-danger" })
+
+				</div>
+				@Html.LabelFor(model => model.CnicNo, htmlAttributes: new { @class = "control-label col-xs-1" })
+				<div class="form-group col-lg-3">
+
+
+					@Html.EditorFor(model => model.CnicNo, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.CnicNo, "", new { @class = "text-danger" })
+
+				</div>
+				@Html.LabelFor(model => model.timeShift, htmlAttributes: new { @class = "control-label col-xs-1  " })
+				<div class="form-group col-lg-3  ">
+
+					<div class="radio-inline col-xs-offset-1">
+						@Html.RadioButton("timeShift", "Night")
+						@Html.ValidationMessageFor(model => model.timeShift, "Night", new { @class = "text-danger" })
+					</div>
+
+					<div class="radio-inline col-xs-offset-1">
+						@Html.RadioButton("timeShift", "Day")
+						@Html.ValidationMessageFor(model => model.timeShift, "Day", new { @class = "text-danger" })
+					</div>
+
+
+
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-offset-6 col-md-10">
+					<input type="submit" value="Create" class="btn btn-default" />
+				</div>
+			</div>
+
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+<div id="calender">
+
+</div>
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" />
+@section Scripts{
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+	
+		
+		$('#calender').fullCalender('destroy');
+		$('#calender').fullCalender({
+			contentHeight: 400,
+			defaultDate: new Date(),
+			timeFormat:'h(:mm)a',
+			theme: true,
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			eventLimit: true,
+			events:events,
+			
+		});
+
+
+
+	});
+
+</script>
+}
+

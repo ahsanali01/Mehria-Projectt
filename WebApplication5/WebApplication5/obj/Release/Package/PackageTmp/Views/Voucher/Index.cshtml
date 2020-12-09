@@ -1,0 +1,156 @@
+﻿@model WebApplication5.Models.Accounts.VoucherModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+	<div style="display:flex; justify-content:space-around">
+		<button class="mainbtnacct" onclick="location.href='@Url.Action("ListDetail","ViewVoucher")'">View Voucher Detail</button>
+
+		<button class="mainbtnacct" onclick="location.href='@Url.Action("Searchdetail","ViewVoucher")'">Search Voucher Detail</button>
+
+	</div>
+	<div class="form-horizontal">
+		<h2 class="label-info" style="font-weight:bold; display:flex; justify-content:center">VOUCHER DETAIL</h2>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		<div class="row">
+			<div class="form-group col-lg-6">
+
+				@Html.LabelFor(model => model.VoucherNo, htmlAttributes: new { @class = "control-label col-sm-4" })
+				@Html.EditorFor(model => model.VoucherNo, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.VoucherNo, "", new { @class = "text-danger" })
+
+			</div>
+			<div class="form-group col-lg-6">
+
+				
+					@Html.LabelFor(model => model.voucherType, htmlAttributes: new { @class = "control-label col-sm-4" })
+					@Html.EditorFor(model => model.voucherType, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.voucherType, "", new { @class = "text-danger" })
+				
+			</div>
+			
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.voucherDate, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.voucherDate, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.voucherDate, "", new { @class = "text-danger" })
+
+			</div>
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.account, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.account, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.account, "", new { @class = "text-danger" })
+
+			</div>
+		
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.chqNo, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.chqNo, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.chqNo, "", new { @class = "text-danger" })
+
+			</div>
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.chqDate, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.chqDate, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.chqDate, "", new { @class = "text-danger" })
+
+			</div>
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.billNo, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.billNo, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.billNo, "", new { @class = "text-danger" })
+
+			</div>
+
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.payee_payer, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.payee_payer, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.payee_payer, "", new { @class = "text-danger" })
+
+			</div>
+
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.debit, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.debit, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.debit, "", new { @class = "text-danger" })
+
+			</div>
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.credit, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.credit, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.credit, "", new { @class = "text-danger" })
+
+			</div>
+
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.Event, htmlAttributes: new { @class = "control-label col-sm-4" })
+
+				@Html.EditorFor(model => model.Event, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Event, "", new { @class = "text-danger" })
+
+			</div>
+
+			<div class="form-group col-lg-6">
+				@Html.LabelFor(model => model.narration, htmlAttributes: new { @class = "control-label col-sm-4" })
+				
+					@Html.EditorFor(model => model.narration, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.narration, "", new { @class = "text-danger" })
+				
+			</div>
+
+
+
+		
+
+
+
+			
+
+
+
+		
+
+
+			
+
+			
+			<div class="form-group " >
+				<div class="col-md-offset-9 col-md-10 top" style="margin-top:3%;">
+					<input type="submit" value="Submit" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -49,6 +49,10 @@
       <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DayPilot, Version=5.0.303.0, Culture=neutral, PublicKeyToken=ce5d34538e20ef65, processorArchitecture=MSIL">
+      <HintPath>..\packages\DayPilot.5.0.303\lib\DayPilot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -90,6 +94,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -146,6 +155,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Calender.css" />
     <Content Include="Content\headerhover.css" />
     <Content Include="Content\OnOffswitch.css" />
     <Content Include="Content\Res_login_CSS.css" />
@@ -153,6 +163,47 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\stk_CSS.css" />
     <Content Include="Content\tabMenu.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Models\DB\DatabaseDBfull.Context.tt">
@@ -179,14 +230,34 @@
     <Content Include="Picture\icons8-schedule-80.png" />
     <Content Include="Picture\icons8-warehouse-64.png" />
     <Content Include="Picture\images\acc1.png" />
+    <Content Include="Picture\images\baraat.png" />
+    <Content Include="Picture\images\beef_qorma.jpg" />
+    <Content Include="Picture\images\biryani.jpg" />
+    <Content Include="Picture\images\chana.jpg" />
+    <Content Include="Picture\images\chckn_chany.jpg" />
+    <Content Include="Picture\images\chickn_qorma.jpg" />
+    <Content Include="Picture\images\cntct.png" />
+    <Content Include="Picture\images\cold-drinks.jpg" />
     <Content Include="Picture\images\DSC_3832.JPG" />
+    <Content Include="Picture\images\dum keema.jpg" />
     <Content Include="Picture\images\envolpe.png" />
+    <Content Include="Picture\images\halwa.jpg" />
     <Content Include="Picture\images\icons8-show-password-80.png" />
+    <Content Include="Picture\images\kheer.jpg" />
+    <Content Include="Picture\images\mehria1.jpg" />
+    <Content Include="Picture\images\naan.jpg" />
+    <Content Include="Picture\images\output-onlinepngtools.png" />
+    <Content Include="Picture\images\party1.png" />
     <Content Include="Picture\images\password.png" />
+    <Content Include="Picture\images\pink tea.jpg" />
+    <Content Include="Picture\images\Poori-1.jpg" />
+    <Content Include="Picture\images\raita.jpg" />
     <Content Include="Picture\images\res2.png" />
     <Content Include="Picture\images\Res_login_HTML.html" />
+    <Content Include="Picture\images\salad.jpg" />
     <Content Include="Picture\images\stk2.png" />
-    <Content Include="Picture\marqe.png" />
+    <Content Include="Picture\images\walima.png" />
+    <Content Include="Picture\mehndi11.png" />
     <Content Include="Picture\mq.jpg" />
     <Content Include="Picture\Stockimg\icons8-banana-split-64.png" />
     <Content Include="Picture\Stockimg\icons8-beetroot-and-carrot-64.png" />
@@ -200,6 +271,7 @@
     <Content Include="Grid.mvc.readme" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\calenderJquery.js" />
     <Content Include="scripts\esm\popper-utils.js" />
     <Content Include="scripts\esm\popper-utils.min.js" />
     <Content Include="scripts\esm\popper.js" />
@@ -224,10 +296,23 @@
     <Content Include="Models\DB\DatabaseDBfull.edmx.diagram">
       <DependentUpon>DatabaseDBfull.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Browsers\qt.browser" />
+    <None Include="Properties\PublishProfiles\MehriaProject.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <None Include="scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="scripts\jquery-1.12.4.js" />
+    <Content Include="scripts\jquery-1.12.4.min.js" />
+    <Content Include="scripts\jquery-1.12.4.min.map" />
+    <None Include="scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.2.1.js" />
+    <Content Include="scripts\jquery-3.2.1.min.js" />
+    <Content Include="scripts\jquery-3.2.1.slim.js" />
+    <Content Include="scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.2.1.min.map" />
     <None Include="scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="scripts\Gridview.js" />
     <Content Include="scripts\jquery-3.4.1.js" />
@@ -235,10 +320,16 @@
     <Content Include="scripts\jquery-3.4.1.slim.js" />
     <Content Include="scripts\jquery-3.4.1.slim.min.js" />
     <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery-ui-1.12.1.js" />
+    <Content Include="scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="scripts\jquery.validate.js" />
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\moment-with-locales.js" />
+    <Content Include="scripts\moment-with-locales.min.js" />
+    <Content Include="scripts\moment.js" />
+    <Content Include="scripts\moment.min.js" />
     <Content Include="scripts\popper-utils.js" />
     <Content Include="scripts\popper-utils.min.js" />
     <Content Include="scripts\popper.js" />
@@ -314,15 +405,16 @@
     <Content Include="scripts\umd\popper-utils.min.js" />
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Accounts\GeneralJeneralController.cs" />
     <Compile Include="Controllers\Accounts\GeneralLedgerController.cs" />
     <Compile Include="Controllers\Accounts\mainPageOfController.cs" />
-    <Compile Include="Controllers\Accounts\ViewVoucherController.cs" />
-    <Compile Include="Controllers\Accounts\VoucherController.cs" />
+    <Compile Include="Controllers\Accounts\AccountsReportController.cs" />
     <Compile Include="Controllers\LoginModule\ChangePasswordController.cs" />
     <Compile Include="Controllers\LoginModule\LoginController.cs" />
     <Compile Include="Controllers\LoginModule\PasswordResetController.cs" />
@@ -335,6 +427,7 @@
     <Compile Include="Controllers\Stocks\DesertsController.cs" />
     <Compile Include="Controllers\Stocks\GroceryController.cs" />
     <Compile Include="Controllers\Stocks\MeatController.cs" />
+    <Compile Include="Controllers\Stocks\StockGeneratedreportController.cs" />
     <Compile Include="Controllers\Stocks\StocksDetailController.cs" />
     <Compile Include="Controllers\Stocks\VegetableController.cs" />
     <Compile Include="Global.asax.cs">
@@ -347,10 +440,22 @@
     <Compile Include="Models\Accounts\VoucherModel.cs" />
     <Compile Include="Models\ChnagePasswordModel.cs" />
     <Compile Include="Models\BookingDetail.cs" />
+    <Compile Include="Models\DB\Account.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\AccountTransaction.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DB\AdditionalFacilitiesandFunction.cs">
       <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\AdditionalFacility.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Beverage.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\beveragesWithFunctionWithMenu.cs">
       <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\Bookingdata.cs">
@@ -374,7 +479,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDBfull.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DB\Desert.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\DesertWithFunctionWithMenu.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DB\Dish.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\DishWithItem.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\FunctionRequestedTable.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\headOfAccount.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Item.cs">
       <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\Menu.cs">
@@ -389,6 +512,21 @@
     <Compile Include="Models\DB\ProgramsandMenu.cs">
       <DependentUpon>DatabaseDBfull.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DB\QuantityupdateBeveragestable.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\QuantityupdatedDeserttable.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\QuantityupdatedItemtable.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\SubAccountBalance.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\subTypesOfHeadAccount.cs">
+      <DependentUpon>DatabaseDBfull.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GetresetLink.cs" />
     <Compile Include="Models\ItemsDetails.cs" />
     <Compile Include="Models\NewItemsadding.cs" />
@@ -398,11 +536,25 @@
     <Compile Include="MVCGridBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CustomerView\AddCustomerClass.cs" />
+    <Compile Include="ViewModel\CustomerView\AddGeneralJournalClass.cs" />
+    <Compile Include="ViewModel\CustomerView\AdditionalFacilitiesclass.cs" />
     <Compile Include="ViewModel\CustomerView\AdditionalfacilitiesINFO.cs" />
+    <Compile Include="ViewModel\CustomerView\AddnewAccounts.cs" />
     <Compile Include="ViewModel\CustomerView\AddNewFunction.cs" />
     <Compile Include="ViewModel\CustomerView\Bookingclass.cs" />
     <Compile Include="ViewModel\CustomerView\BookingViewModel.cs" />
+    <Compile Include="ViewModel\CustomerView\CheckFunctionRequestViewModel.cs" />
     <Compile Include="ViewModel\CustomerView\CustomerClass.cs" />
+    <Compile Include="ViewModel\CustomerView\EditAdditionalFacilities.cs" />
+    <Compile Include="ViewModel\CustomerView\EditNewFunction.cs" />
+    <Compile Include="ViewModel\CustomerView\EventModel.cs" />
+    <Compile Include="ViewModel\CustomerView\StockBeveragesClass.cs" />
+    <Compile Include="ViewModel\CustomerView\StockDesertReportClass.cs" />
+    <Compile Include="ViewModel\CustomerView\StockINOUTClass.cs" />
+    <Compile Include="ViewModel\CustomerView\StockItemReportClass.cs" />
+    <Compile Include="ViewModel\CustomerView\StocksReportClass.cs" />
+    <Compile Include="ViewModel\CustomerView\ViewDishNames.cs" />
+    <Compile Include="ViewModel\ItemsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
@@ -437,12 +589,9 @@
     <Content Include="Views\Meat\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutStocksMeat.cshtml" />
     <Content Include="Views\Shared\combine\baratTabINFO.cshtml" />
-    <Content Include="Views\Shared\combine\Mehndiinfo.cshtml" />
     <Content Include="Views\Shared\combine\walimaTabINFO.cshtml" />
     <Content Include="Views\Shared\combine\partyTabINFO.cshtml" />
-    <Content Include="Views\Shared\_LayoutReservationLogin.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutStockLogin .cshtml" />
     <Content Include="Views\ChangePassword\passwordchangeforuser.cshtml" />
     <Content Include="Views\Shared\_LayoutReservationChangescreen.cshtml" />
     <Content Include="Views\PasswordReset\GetPasswordform.cshtml" />
@@ -454,7 +603,6 @@
     <Content Include="Views\GeneralJeneral\general.cshtml" />
     <Content Include="Views\CustomerINFO\Index.cshtml" />
     <Content Include="Views\SendRequestForStock\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutAccountsLogin.cshtml" />
     <Content Include="Views\mainPageOf\Index.cshtml" />
     <Content Include="Views\AddnewStocks\Index.cshtml" />
     <Content Include="Views\Login\ResetLinkforPassword.cshtml" />
@@ -470,6 +618,74 @@
     <Content Include="Views\BookingNewRecord\WalimaFunctionGet.cshtml" />
     <Content Include="Views\BookingNewRecord\PartyFunctionGet.cshtml" />
     <Content Include="Views\BookingNewRecord\MehndiFunctionGet.cshtml" />
+    <Content Include="Views\BookingNewRecord\Getmenu.cshtml" />
+    <Content Include="Views\Shared\combine\Mehndiinfo.cshtml" />
+    <Content Include="Views\ReservationEventsmain\ActiveEvents.cshtml" />
+    <Content Include="Views\ReservationEventsmain\DeactiveEvents.cshtml" />
+    <Content Include="Views\ReservationEventsmain\Reminder.cshtml" />
+    <Content Include="scripts\moment.min.js.map" />
+    <Content Include="scripts\moment-with-locales.min.js.map" />
+    <Content Include="Views\FullCalender\Index.cshtml" />
+    <Content Include="Views\SendRequestForStock\FreeSlot.cshtml" />
+    <Content Include="Views\Shared\_LayoutReservationforcalender.cshtml" />
+    <Content Include="Views\CustomerINFO\EditCustomer.cshtml" />
+    <Content Include="Views\StocksDetail\CheckFunctionRequest.cshtml" />
+    <Content Include="Views\ReservationEventsmain\additionalINFo.cshtml" />
+    <Content Include="Views\AddnewStocks\addNewStocks.cshtml" />
+    <Content Include="Views\AddnewStocks\addNewStocksGet.cshtml" />
+    <Content Include="Views\Vegetable\ViewVegetable.cshtml" />
+    <Content Include="Views\Berverages\ViewBeverages.cshtml" />
+    <Content Include="Views\Deserts\ViewDeserts.cshtml" />
+    <Content Include="Views\Grocery\ViewGrossory.cshtml" />
+    <Content Include="Views\Meat\ViewMeats.cshtml" />
+    <Content Include="Views\StocksDetail\AddItemsForDish.cshtml" />
+    <Content Include="Views\AddItems\AddItemsForDish.cshtml" />
+    <Content Include="Views\StockGeneratedreport\StockReports.cshtml" />
+    <Content Include="Views\StockGeneratedreport\StockReportsPost.cshtml" />
+    <Content Include="Views\StockGeneratedreport\StockInOut.cshtml" />
+    <Content Include="Views\Login\AccountLogin.cshtml" />
+    <Content Include="Views\Login\ReservationLogin.cshtml" />
+    <Content Include="Views\Login\MainPageofIndex.cshtml" />
+    <Content Include="Views\Shared\_LayoutReservationChangesPrint.cshtml" />
+    <Content Include="Views\GeneralJeneral\Addingnewaccounts.cshtml" />
+    <Content Include="Views\GeneralJeneral\addgeneraljenrnal.cshtml" />
+    <Content Include="Views\GeneralLedger\TrailBalance.cshtml" />
+    <Content Include="Views\Shared\_LayoutAccountsReport.cshtml" />
+    <Content Include="Views\AccountsReport\Index.cshtml" />
+    <Content Include="Views\Shared\_Layoutforstatement.cshtml" />
+    <Content Include="Views\GeneralLedger\IncomeStatement.cshtml" />
+    <Content Include="Views\GeneralLedger\Statementofownerequity.cshtml" />
+    <Content Include="Views\GeneralLedger\BalanceSheet.cshtml" />
+    <Content Include="Views\AccountsReport\AccountReceivable.cshtml" />
+    <Content Include="Views\AccountsReport\AccountPayable.cshtml" />
+    <Content Include="Views\Shared\_LayoutReservationfunctiondetailCategoryWise.cshtml" />
+    <Content Include="Views\ReservationEventsmain\MehndiEvents.cshtml" />
+    <Content Include="Views\ReservationEventsmain\BaratEvents.cshtml" />
+    <Content Include="Views\ReservationEventsmain\WalimaEvents.cshtml" />
+    <Content Include="Views\ReservationEventsmain\PartyEvents.cshtml" />
+    <Content Include="Views\ReservationEventsmain\EditFunctionGet.cshtml" />
+    <Content Include="Views\ReservationEventsmain\EditAdditional.cshtml" />
+    <Content Include="Views\ReservationEventsmain\additionalINFoprint.cshtml" />
+    <Content Include="Views\Berverages\EditBeverages.cshtml" />
+    <Content Include="Views\Deserts\EditDeserts.cshtml" />
+    <Content Include="Views\Grocery\EditGrossory.cshtml" />
+    <Content Include="Views\Meat\EditMeat.cshtml" />
+    <Content Include="Views\Vegetable\EditVegetable.cshtml" />
+    <Content Include="Views\GeneralLedger\IncomeTax.cshtml" />
+    <Content Include="Views\Berverages\UpdateBeverages.cshtml" />
+    <Content Include="Views\Deserts\UpdateDeserts.cshtml" />
+    <Content Include="Views\Grocery\UpdateGrossory.cshtml" />
+    <Content Include="Views\Meat\UpdateMeat.cshtml" />
+    <Content Include="Views\Vegetable\UpdateVegetable.cshtml" />
+    <Content Include="Views\StockGeneratedreport\History.cshtml" />
+    <Content Include="Views\ReservationEventsmain\HistoryofRequests.cshtml" />
+    <Content Include="Views\GeneralLedger\StocksRequests.cshtml" />
+    <Content Include="Views\Shared\_LayoutAboutUspage.cshtml" />
+    <Content Include="Views\Login\AboutUs.cshtml" />
+    <Content Include="Views\Shared\_LayoutContactUsPage.cshtml" />
+    <Content Include="Views\Login\ContactUS.cshtml" />
+    <Content Include="Views\Shared\_LayoutPrivacyPolicypage.cshtml" />
+    <Content Include="Views\Login\PrivacyPolicy.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -479,10 +695,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Berverages\" />
-    <Folder Include="Views\Deserts\" />
-    <Folder Include="Views\Grocery\" />
-    <Folder Include="Views\Vegetable\" />
     <Folder Include="Views\View\" />
   </ItemGroup>
   <ItemGroup>

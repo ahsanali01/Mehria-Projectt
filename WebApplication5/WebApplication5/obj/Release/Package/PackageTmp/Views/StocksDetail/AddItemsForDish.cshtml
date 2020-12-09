@@ -1,0 +1,97 @@
+﻿@model IEnumerable<WebApplication5.ViewModel.CustomerView.NameofItem>
+@using WebApplication5.Models.DB;
+
+@{
+	ViewBag.Title = "AddItemsForDish";
+	Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+	IEnumerable<Item> Nameofitem = ViewData["ItemNames"] as IEnumerable<Item>;
+	IEnumerable <Beverage> NameofBeverage= ViewData["BevergeName"] as IEnumerable<Beverage>;
+	IEnumerable<Desert> NameofDesert= ViewData["DesertName"] as IEnumerable<Desert>;
+	ModelBinderAttribute model = ViewData["ModelINFO"] as ModelBinderAttribute;
+		}
+
+<h2 class="label-success" style="display:flex; justify-content:center">Add Items For Dishes</h2>
+@using (Html.BeginForm("GetItemsForDish", "StocksDetail", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+
+<div class="row">
+
+	
+	@foreach (var item in Model)
+	{
+
+		if (item.menuID == ViewBag.IDofdish)
+		{
+
+			<div class="col-lg-4">
+				<table class="table table-bordered table-responsive">
+					<tr class="col-lg-offset-6">
+
+						@{int idofrequest = ViewBag.requestedID; }
+						<th>
+							@Html.Hidden("idofrequest",idofrequest)
+
+
+							@Html.Hidden("items",item.dishName)
+							@Html.Hidden("Beve", item.dishName)
+							@Html.Hidden("Desert", item.dishName)
+
+
+							@Html.DisplayFor(modelItem => item.dishName)
+						</th>
+					
+						@foreach (var items in Nameofitem)
+						{
+
+							<td>
+								
+								@Html.CheckBox("items",false)
+							
+								@Html.DisplayFor(modelItem => items.itemName)
+								<label>Price:@Html.TextBox("items", "", new { @class = "" })</label>
+								<label>Quantity:@Html.TextBox("items", "", new { @class = "" })</label>
+							</td>
+						}
+						
+						
+						@foreach (var itembeve in NameofBeverage)
+						{
+
+							<td>
+								@Html.CheckBox("Beve", itembeve.beveragesName)
+								@Html.DisplayFor(modelItem => itembeve.beveragesName)
+								<label>Price:@Html.TextBox("Beve", "", new { @class = "" })</label>
+								<label>Quantity:@Html.TextBox("Beve", "", new { @class = "" })</label>
+							</td>	}
+						
+						@foreach (var itemDese in NameofDesert)
+						{
+							
+							<td>
+								@Html.CheckBox("Desert", itemDese.desertName)
+								@Html.DisplayFor(modelItem => itemDese.desertName)
+								<label>Price:@Html.TextBox("Desert", "", new { @class = "" })</label>
+							    <label>Quantity:@Html.TextBox("Desert", "", new { @class = "" })</label>
+							</td>	}
+
+					</tr>
+
+
+				</table>
+			</div>
+
+
+		}
+
+
+	}
+
+	<div class="form-group">
+		<div class="col-xs-offset-4 col-lg-12">
+			<input type="submit" value="Submit" class="btn btn-default" onclick="" style="width:70%; height:50px" />
+		</div>
+	</div>
+
+</div>		
+}

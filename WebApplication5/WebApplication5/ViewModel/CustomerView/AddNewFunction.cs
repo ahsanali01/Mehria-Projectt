@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using WebApplication5.Models.DB;
 
 namespace WebApplication5.ViewModel.CustomerView
 {
@@ -11,7 +12,7 @@ namespace WebApplication5.ViewModel.CustomerView
 
         [Display(Name ="Booking Date")]
         [Required(ErrorMessage ="Booking Date must be Selected")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{dd/mm/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime bookingDate { get; set; }
         [Display(Name = "Function Date")]
@@ -21,33 +22,33 @@ namespace WebApplication5.ViewModel.CustomerView
         public System.DateTime functionDate { get; set; }
         [Display(Name = "No Of Guests")]
         [Required(ErrorMessage = "Please enter Number of Guests")]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
+     
 
         public int noofGuest { get; set; }
         [Display(Name = "Rate Per Guests")]
         [Required(ErrorMessage = "Please enter Rate Per Guest")]
-        [DataType(DataType.Currency)]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
+       
+     
         public int rateperGuest { get; set; }
-        [Display(Name = "Stage Charges")]
-        [Required(ErrorMessage = "Please enter Stage Charges")]
-        [DataType(DataType.Currency)]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
-        public Nullable<int> stagesCharges { get; set; }
-        [Display(Name = "Basics Other")]
-        [Required(ErrorMessage = "Please enter Basics Other")]
-        [DataType(DataType.Currency)]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
-        public int basics_others { get; set; }
+        [Display(Name = "Advance Payment")]
+        [Required(ErrorMessage = "Please enter Advance Payment")]
+      
+       
+        public Nullable<int> AdvancePayment { get; set; }
+        [Display(Name = "Remaining Payment")]
+        [Required(ErrorMessage = "Please enter Remaining Payment")]
+   
+  
+        public Nullable<int> RemainingPayment { get; set; }
         [Display(Name = "Extras")]
         [Required(ErrorMessage = "Please enter Extra Charges")]
-        [DataType(DataType.Currency)]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
+   
+ 
         public int Extras { get; set; }
         [Display(Name = "Total Charges")]
         [Required(ErrorMessage = "Please enter Total Charges")]
-        [DataType(DataType.Currency)]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
+  
+     
         public int TotalCharges { get; set; }
          
       
@@ -56,13 +57,30 @@ namespace WebApplication5.ViewModel.CustomerView
 
         public string timeShift { get; set; }
         public int MenuId { get; set; }
+
+      
         public int ProgramId { get; set; }
         [Display(Name = "CNIC NO")]
         [Required(ErrorMessage = "Please enter Same Customer CNIC NO Here")]
-        [DataType(DataType.CreditCard)]
-        [RegularExpression("int", ErrorMessage = (" Must be Number "))]
-        public string CnicNo { get; set; }
+     
+        [Range(0, Int64.MaxValue, ErrorMessage = "Please enter valid Number")]
+        public long CnicNo { get; set; }
         
+        public Nullable<int> stagePrice { get; set; }
+        public Nullable<int>  DjPrice { get; set; }
+        public Nullable<int> electriccityPrice { get; set; }
+        public Nullable<int> AcHeatingPrice { get; set; }
+       
+        public Nullable<int> FullHallPrice { get; set; }
 
+        public Bookingdata Updatefunction(int id)
+        {
+            Bookingdata cust = new Bookingdata();
+            using (MehriamarqueeEntities meh = new MehriamarqueeEntities())
+            {
+                cust = meh.Bookingdatas.Where(X => X.functionID== id).FirstOrDefault();
+            }
+            return cust;
+        }
     }
 }

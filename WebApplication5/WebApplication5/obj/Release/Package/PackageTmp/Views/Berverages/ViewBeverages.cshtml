@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.Beverage>
+
+@{
+    ViewBag.Title = "ViewBeverages";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","StocksDetail")'"></button>
+
+<h2 class="label-success" style="display:flex; justify-content:center;color:white">Beverages</h2>
+
+<table style="display:flex; justify-content:center" class="table table-bordered table-striped table-responsive table-hover">
+    <tr>
+        <th>
+            Beverages Name
+        </th>
+        <th>
+             Sale Price
+        </th>
+        <th>
+            Purchase Price
+        </th>
+        <th>
+            Quantity Of Beverages
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Reverse()) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.beveragesName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.beveragesSalePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.beveragesPurchasePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantityOfBeverages)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditBeverages", new { idofbeve = item.beverageId }) 
+        </td>
+		<td>
+			@Html.ActionLink("update Quantity", "UpdateBeverages", new { idofbeve = item.beverageId })
+		</td>
+    </tr>
+}
+
+</table>

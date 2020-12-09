@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebApplication5.Models.ItemsDetails>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_LayoutStocksMeat.cshtml";
+}
+
+<h2 class="label-success">Stock Details</h2>
+<div>
+	<table class="table table-responsive table-bordered table-hover" style="display:flex; justify-content:center">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.itemId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.itemName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.itemQuantity) Kg,s
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.itemSalePrice) Rate/Kg,s
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.itemPurchasePrice) Rate/Kg,s
+			</th>
+			<th>
+
+			</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Tomato</td>
+			<td>30</td>
+			<td>100</td>
+			<td>50</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+
+				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+			</td>
+		</tr>
+
+		@*@foreach (var item in Model) {
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.itemId)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.itemName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.itemQuantity)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.itemSalePrice)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.itemPurchasePrice)
+					</td>
+
+				</tr>
+			}*@
+
+	</table>
+</div>

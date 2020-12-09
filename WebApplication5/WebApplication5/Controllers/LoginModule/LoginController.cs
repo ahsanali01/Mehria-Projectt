@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Principal;
 using System.Web;
 using System.Web.ModelBinding;
 using System.Web.Mvc;
@@ -18,8 +19,8 @@ namespace WebApplication5.Controllers
     {
       
         // GET: Login
-        [HttpGet]
-        public ActionResult Index(ModelofLogin login1)
+     
+        public ActionResult MainPageofIndex(ModelofLogin login1)
         {
 
             if (ModelState.IsValid)
@@ -31,19 +32,23 @@ namespace WebApplication5.Controllers
                     return RedirectToAction("Index", "ReservationEventsmain");
 
                 }
-
-                else if (isAuthenticated && login1.Username == "Stocker")
+               else if (isAuthenticated && login1.Username == "Stocker")
                 {
                     return RedirectToAction("Index", "StocksDetail");
                 }
-                else if (isAuthenticated && login1.Username == "Accounter")
+               else if (isAuthenticated && login1.Username == "Accounter")
                 {
                     return RedirectToAction("Index", "mainPageOf");
                 }
                 else
                 {
-
+                    TempData["message"] = " Username or Password is Incorrect";
                     ModelState.AddModelError("", "Username or Password is Incorrect");
+                       // return PartialView("ReservationLogin()");
+                  
+                  //  return PartialView("ReservationLogin",login1); 
+
+
                 }
 
 
@@ -53,7 +58,31 @@ namespace WebApplication5.Controllers
 
             return View();
         }
+   
+        [HttpGet]
+        public ActionResult ReservationLogin()
+        {
+            return View();
+        }
+      
+        public ActionResult StockLogin() { 
+       
 
+            return View();
+        }
+       
+    
+
+        public ActionResult AccountLogin(ModelofLogin login1)
+        {
+
+           
+
+
+            
+
+            return View();
+        }
         [HttpGet]
         public ActionResult ResetLinkforPassword()
         {
@@ -69,42 +98,51 @@ namespace WebApplication5.Controllers
                 {
                     
                      token = WebSecurity.GeneratePasswordResetToken(link.username);
-                    
-                  
+
+
                     if (token == null)
                     {
                         // If user does not exist or is not confirmed.  
-                        ModelState.AddModelError("", "Username does not exisit please enter valid username");
-                        return RedirectToAction("Index","Login");
+                        ModelState.AddModelError("", "Username does not exisit");
+                        return RedirectToAction("MainPageofIndex", "Login");
 
                     }
                     else
                     {
                         //Create URL with above token  
+                        try {
+                            string To = link.EmailAddress;
+                            string Subject = "Get token ";
+                            string body = token;
+                            MailMessage mail = new MailMessage();
+                            mail.To.Add(link.EmailAddress);
+                            mail.From = new MailAddress("Codepub8@gmail.com");
+                            mail.Subject = Subject;
+                            mail.Body = "This is your token = " + body + "\nEnter this token into given filed and add new password successfully";
 
-                        string To = link.EmailAddress;
-                        string Subject = "Get token ";
-                        string body = token;
-                        MailMessage mail = new MailMessage();
-                        mail.To.Add(link.EmailAddress);
-                        mail.From = new MailAddress("ahsan.ali5444@gmail.com");
-                        mail.Subject = Subject;
-                        mail.Body = "This is your token = "+ body+"\nEnter this token into given filed and add new password successfully";
-                       
-                        SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.UseDefaultCredentials = true;
-                        smtp.EnableSsl = true;
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtp.Credentials = new NetworkCredential("ahsan.ali5444@gmail.com", "Akk54441782");
-                        smtp.Send(mail);
+                            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                            smtp.Host = "smtp.gmail.com";
+                            smtp.Port = 25;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.EnableSsl = true;
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtp.Credentials = new NetworkCredential("Codepub8@gmail.com", "Mehria@123");
+                            smtp.Send(mail);
 
-                        TempData["mydata"] = token;
-                        TempData["message"] = "Token sended successfully To:" + link.EmailAddress;
-                        return RedirectToAction("GetPasswordform","PasswordReset");
+                            TempData["mydata"] = token;
+                            TempData["message"] = "Token sended successfully To:" + link.EmailAddress;
+                            return RedirectToAction("GetPasswordform", "PasswordReset");
 
-                    }
+                        }
+                        catch (Exception)
+                        {
+                            TempData["message"] = "!Incorrect Email Address";
+                        }
+                        }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Username does not exisit please enter valid username");
                 }
             }
 
@@ -120,31 +158,50 @@ namespace WebApplication5.Controllers
             Response.Cookies.Clear();
             WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("MainPageofIndex", "Login");
         }
 
-
+        
         public ActionResult check()
         {
-            if (User.Identity.Name == "Booker")
+            if (WebSecurity.CurrentUserName == "Booker")
             {
                 return RedirectToAction("Index", "ReservationEventsmain");
             }
-            else if (User.Identity.Name == "Stocker") {
+            else if (WebSecurity.CurrentUserName == "Stocker") {
                 return RedirectToAction("Index", "StocksDetail");
             }
 
-            else if(User.Identity.Name == "Accounter")
+            else if(WebSecurity.CurrentUserName == "Accounter")
             {
                 return RedirectToAction("Index", "mainPageOf");
             }
 
             else
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("MainPageofIndex", "Login");
             }
 
             
+        }
+
+        public ActionResult AboutUs()
+        {
+           
+
+            return View();
+        }
+        public ActionResult PrivacyPolicy()
+        {
+
+
+            return View();
+        }
+        public ActionResult ContactUS()
+        {
+
+
+            return View();
         }
 
     }

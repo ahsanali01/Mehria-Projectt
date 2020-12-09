@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebApplication5.ViewModel.CustomerView.CheckFunctionRequestViewModel>
+
+
+@{
+    ViewBag.Title = "CheckFunctionRequest";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+	
+}
+
+
+<h2 class="label-success" style="display:flex; justify-content:center; color:white">Avalaible Function Request</h2>
+
+<table class="table">
+	<tr>
+
+		<th>
+			Request Date
+		</th>
+		<th>
+			Booking Date
+		</th>
+		<th>
+			Function Date
+		</th>
+		<th>
+			No Of Guests
+		</th>
+		<th>
+			Rate Per Guest
+		</th>
+		<th>
+			Menu Name
+		</th>
+		<th></th>
+	</tr>
+
+@foreach (var item in Model.Reverse()) {
+	if (item.RequestStatus =="SENDED")
+	{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.requestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.functionDate)
+        </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.noofGuests)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.rateperGuest)
+		</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.menuName)
+        </td>
+        <td>
+            @Html.ActionLink("Add Required Stock","AddItemsForDish", "StocksDetail", new {  IDofdish = item.menuID, requestedID=item.requestID},null) 
+         
+        </td>
+    </tr>
+	}
+}
+
+</table>

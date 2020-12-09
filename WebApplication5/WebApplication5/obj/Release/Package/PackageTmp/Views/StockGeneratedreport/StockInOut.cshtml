@@ -1,0 +1,155 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.Item>
+@using WebApplication5.Models.DB;
+@{
+	ViewBag.Title = "StockInOut";
+	Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+	IEnumerable<Beverage> BeveItemReport = ViewData["Beveitm"] as IEnumerable<Beverage>;
+	IEnumerable<Desert> desertItemReport = ViewData["desertitm"] as IEnumerable<Desert>;
+	//var combinetwo = Zip(ViewBag.quantitytotalofItem, Model);
+}
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","StocksDetail")'"></button>
+
+
+<h2 class="label-success" style="display:flex; justify-content:center;">Stock In/Out</h2>
+
+<table class="table" >
+
+    <tr>
+        <th>
+            Item Name
+        </th>
+        <th>
+            Sales Price
+        </th>
+        <th>
+            Purchase Price
+        </th>
+        <th>
+           Stock IN
+        </th>
+        <th>
+           Category
+        </th>
+        <th>
+           Unit
+        </th>
+		<th>
+			Stock Out
+		</th>
+        <th></th>
+    </tr>
+	@{
+		int i=0, j=0, k = 0;
+
+
+
+	}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salesPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.purchasePrice)
+        </td>
+        <td>
+          @ViewBag.quantityintotalofItem[i]	
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit)
+        </td>
+
+	
+			<td>
+				
+				@ViewBag.quantitytotalofItem[i]	
+				
+			</td>
+					
+				
+		@{		
+
+			i++;
+
+		}
+
+
+
+
+    </tr>
+}
+
+	@foreach (var item in BeveItemReport)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.beveragesName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.beveragesSalePrice)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.beveragesPurchasePrice)
+			</td>
+			<td>
+				@ViewBag.quantityintotalofBeve[j]
+			</td>
+			<td>
+				Beverage
+			</td>
+			<td>
+				Null
+			</td>
+		
+					<td>
+						@ViewBag.quantitytotalofBeve[j]
+					</td>
+
+				
+@{
+	j++;
+}
+		</tr>
+				}
+
+	@foreach (var item in desertItemReport)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.desertName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.desertSalePrice)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.desertPurchasePrice)
+			</td>
+			<td>
+				@ViewBag.quantityintotalofDesert[k]
+			</td>
+			<td>
+				Desert
+			</td>
+			<td>
+				Null
+			</td>
+			
+					<td>
+						@ViewBag.quantitytotalofDesert[k]
+					</td>
+
+	@{			
+
+		k++;
+	}
+		</tr>
+				}
+
+</table>

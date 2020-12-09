@@ -12,10 +12,8 @@ namespace WebApplication5.Models
            [Display(Name ="Item Name")] [Required(ErrorMessage ="Item Name is Required")] [DataType(DataType.MultilineText)]
 
             public string itemName { get; set; }
-        [Display(Name = "Category")]
-        [Required(ErrorMessage = "Category is Required")]
-        [DataType(DataType.MultilineText)]
-        public string category { get; set; }
+       
+  
         [Display(Name = "Item Quantity")]
         [Required(ErrorMessage = "Item Quantity is Required")]
         public int itemQuantity { get; set; }
@@ -25,7 +23,14 @@ namespace WebApplication5.Models
         [Display(Name = "Item Purchase Price")]
         [Required(ErrorMessage = "Item Purchase Price is Required")]
         public int itemPurchasePrice { get; set; }
+        [Display(Name = "Category")]
+        [Required(ErrorMessage = "Category is Required")]
+      
+        public string category { get; set; }
+        [Display(Name = "Unit")]
+        [Required(ErrorMessage = "Unit is Required")]
+        public string unit{ get; set; }
 
-        
+
     }
 }

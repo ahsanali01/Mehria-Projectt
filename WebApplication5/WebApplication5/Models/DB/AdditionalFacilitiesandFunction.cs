@@ -17,7 +17,7 @@ namespace WebApplication5.Models.DB
         public int additionalandfunctionID { get; set; }
         public int functionID { get; set; }
         public int additionalID { get; set; }
-        public int additionalFacilityPrice { get; set; }
+        public Nullable<int> additionalFacilityPrice { get; set; }
     
         public virtual AdditionalFacility AdditionalFacility { get; set; }
         public virtual Bookingdata Bookingdata { get; set; }

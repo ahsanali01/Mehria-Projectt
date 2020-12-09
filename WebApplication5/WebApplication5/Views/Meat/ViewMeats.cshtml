@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.Item>
+
+@{
+    ViewBag.Title = "ViewMeats";
+    Layout = "~/Views/Shared/_LayoutReservationChangescreen.cshtml";
+}
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","StocksDetail")'"></button>
+
+<h2 class="label-success" style="display:flex; justify-content:center;color:white">Meats</h2>
+@if(Model.Count() > 0)
+{
+<table style="display:flex; justify-content:center" class="table table-bordered table-striped table-responsive table-hover">
+	<tr>
+		<th>
+			Item Name
+		</th>
+		<th>
+			Sales Price
+		</th>
+		<th>
+			Purchase Price
+		</th>
+		<th>
+			Quantity
+		</th>
+		<th>
+			Unit
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model.Reverse())
+	{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salesPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.purchasePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditMeat", new { idofitem = item.itemId })
+        </td>
+		<td>
+			@Html.ActionLink("Update Quantity", "UpdateMeat", new { idofitem = item.itemId })
+		</td>
+    </tr>
+	}
+</table>
+		}
+else
+{
+<div class="alert alert-success">
+	<p>There is no Current Record Exist</p>
+</div>
+}

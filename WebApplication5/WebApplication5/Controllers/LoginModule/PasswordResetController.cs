@@ -28,11 +28,12 @@ namespace WebApplication5.Controllers.LoginModule
                 
 
                 WebSecurity.ResetPassword(reset.Token, reset.newPassword);
-                return RedirectToAction("Index","Login");
+                TempData["message"] = "Password Changed Successfully";
+                return RedirectToAction("MainPageofIndex", "Login");
             }
             else
             {
-                ModelState.AddModelError("", "username is incorrect Please enter valid username");
+                ModelState.AddModelError("", "!Incorrect Token");
             }
             return View();
         }

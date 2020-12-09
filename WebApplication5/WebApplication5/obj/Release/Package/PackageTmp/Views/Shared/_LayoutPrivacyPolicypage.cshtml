@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+
+	
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/headerhover.css" rel="stylesheet" />
+	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<header>
+		@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
+	</header>
+	<div class="" style="margin-top:50px;">
+
+		@RenderBody();
+		<div style="padding-left:50px;padding-right:50px;">
+	
+
+		<h1 style="padding-left:50px;padding-right:50px; text-align:center;">PRIVACY POLICY</h1>
+		<p style="padding-left:50px;padding-right:50px; text-align:justify; font-size:14pt">
+			In order to process your enquiry and to provide you with the best possible level of service, we may need to collect some necessary information about you, your name, company name, telephone number and e-mail address. This will only happen when you complete the enquiry form.
+			</p>
+			<br />
+			<br />
+			
+		<p style="padding-left:50px;padding-right:50px; text-align:justify; font-size:14pt">
+			However, we only use the information we collect about you in accordance with the Data Protection Act 1998.
+			</p>
+			<br />
+			<br />
+			
+			<p style="padding-left:50px;padding-right:50px; text-align:justify; font-size:14pt">
+			We will not, under any circumstances, pass any of the information we have collected about you on to any third party. Our commitment to customer service ensures that all personal information is held securely, in accordance with both our internal security policy and the UK Data Protection Act 1998, to ensure that no other party is able to view your details.
+			</p>
+			<br />
+			<br />
+			<p style="padding-left:50px;padding-right:50px; text-align:justify; font-size:14pt">
+				If you wish to check the information that we hold about you, you can do this at any time by emailing us. If any of the information we hold is inaccurate, we will delete or correct it immediately. Our security procedures mean that we may request proof of identity before we are able to disclose sensitive information to you.
+
+
+				</p>
+
+
+
+
+
+
+
+
+
+				<hr />
+
+</div>
+
+
+		<footer class="footer">
+
+			@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+		</footer>
+		<script src="~/scripts/Calenderbuiltin.js"></script>
+		<script src="~/scripts/Gridview.js"></script>
+		<script src="~/scripts/popup.js"></script>
+		<script src="~/scripts/jquery-3.4.1.js"></script>
+		<script src="~/scripts/bootstrap.js"></script>
+
+
+
+</body>
+</html>

@@ -11,11 +11,13 @@ namespace WebApplication5.ViewModel.CustomerView
         public List<Bookingdata> GetBookingdetail()
         {
             List<Bookingdata> bookdatas = new List<Bookingdata>();
-            using (MehriamarqueeEntities2 db = new MehriamarqueeEntities2())
+            using (MehriamarqueeEntities db = new MehriamarqueeEntities())
             {
                 bookdatas = db.Bookingdatas.ToList();
             }
             return bookdatas;
         }
+
+       
+        }
     }
-}

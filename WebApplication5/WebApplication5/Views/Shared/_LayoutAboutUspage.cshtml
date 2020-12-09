@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+
+	
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Content/headerhover.css" rel="stylesheet" />
+	<link href="~/Content/sidebarcollapse.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<header>
+		@RenderPage("~/Views/Shared/combine/Header_name.cshtml");
+	</header>
+	<div class="" style="margin-top:50px;">
+
+		@RenderBody();
+		<div style="padding-left:50px;padding-right:50px;">
+			<img class="img-responsive img-rounded" src="~/Picture/images/DSC_3832.JPG" width="1350" height="180" />
+		</div>
+		<br />
+		<br />
+		<p style="padding-left:50px;padding-right:50px; text-align:justify; font-size:14pt">
+			Mehria Wedding Marquees First of its own type in ATTOCK and in surroundings.
+			All Wedding solutions and Event Management from Wedding planning to Wedding
+		    card and Photography to Lunch/Buffet or Alacarte.Just name it and we have it.
+			Our Priority is Customer Satisfaction and we deal in all kinds of event/functions
+			catering food and decor.
+			<br />
+			<h1 style="padding-left:50px;padding-right:50px; text-align:center;">TERMS AND CONDITIONS</h1>
+			<br />
+			<ul style="padding-left:54px;padding-right:50px; text-align:justify; font-size:14pt">
+			
+				<li>A 30% Deposit is required to secure booking with Mehria Wedding Marque.</li>
+				<li>Event Group accepts payment in the following methods: Cash, Cheque, VISA, MasterCard and Bank Transfer.</li>
+				<li>the Customer must pay the Remaining Fee in full to the Accountant one week prior to Delivery date or client Collection date of the Equipment. If payment is not received in full prior to mention time then Customer is not obliged to the Event.</li>
+				<li>Unless the Owner specifically, in writing, and by approved credit application, waives the receipt of the Deposit
+			        as a pre-condition of Acceptance, no Acceptance by the Hirer shall be effective unless and until the Deposit is received.</li>
+			</ul>
+			
+		</p>
+
+
+
+
+
+
+
+
+
+
+		<hr />
+
+	</div>
+
+
+		<footer class="footer">
+
+			@RenderPage("~/Views/Shared/combine/Footer_name.cshtml");
+
+		</footer>
+		<script src="~/scripts/Calenderbuiltin.js"></script>
+		<script src="~/scripts/Gridview.js"></script>
+		<script src="~/scripts/popup.js"></script>
+		<script src="~/scripts/jquery-3.4.1.js"></script>
+		<script src="~/scripts/bootstrap.js"></script>
+
+
+
+</body>
+</html>

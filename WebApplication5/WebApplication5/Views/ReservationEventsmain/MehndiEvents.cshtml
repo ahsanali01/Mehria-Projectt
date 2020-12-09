@@ -1,0 +1,154 @@
+﻿@model IEnumerable<WebApplication5.Models.DB.Bookingdata>
+
+@{
+	ViewBag.Title = "Alldetailoffunction";
+	Layout = "~/Views/Shared/_LayoutReservationfunctiondetailCategoryWise.cshtml";
+}
+<button class="btn btn-group-sm glyphicon glyphicon-menu-left" onclick="location.href='@Url.Action("Index","ReservationEventsmain")'"></button>
+<h2 class="label-info" style="display:flex; justify-content:center">Mehndi Function</h2>
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	<div class="row">
+		@Html.Label("Search by Date", new { @class = "control-label col-md-2" })
+		<div class="col-md-4">
+			@Html.TextBox("SearchtermDate", null, new { @class = "form-control", @Type = "date" })
+		</div>
+		@Html.Label("Search by CNIC NO:", new { @class = "control-label col-md-2" })
+		<div class="col-md-4">
+			@Html.TextBox("SearchtermCnic", null, new { @class = "form-control" })
+		</div>
+		<br />
+		<br />
+		<div class="col-md-3 col-lg-offset-2">
+			<input type="submit" value="Search" class="btn btn-primary" />
+		</div>
+	</div>
+}
+<br />
+<br />
+@if (Model != null)
+{
+	<table class="table table-bordered table-striped table-responsive table-hover">
+		<tr>
+
+			<th>
+			Booking Date
+			</th>
+			<th>
+			Function Date
+			</th>
+			<th>
+			No Of Guest
+			</th>
+			<th>
+		    Rate Per Guest
+			</th>
+			<th>
+			Advance Payment
+			</th>
+			<th>
+			Remaining Payment
+			</th>
+			<th>
+		    Extras
+			</th>
+			<th>
+			Total Charges
+			</th>
+			<th>
+			time Shift
+			</th>
+			<th>
+			Cnic No
+			</th>
+			<th>
+			Customer Name
+			</th>
+			<th>
+			Address
+			</th>
+			<th>
+			Mobile No
+			</th>
+			<th>
+		    Remarks
+			</th>
+			<th>
+			Menu Name
+			</th>
+			<th>
+			Program Name
+			</th>
+
+		</tr>
+
+		@foreach (var item in Model.Reverse())
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.bookingDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.functionDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.noofGuest)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.rateperGuest)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AdvancePayment)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.RemainingPayment)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Extras)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.TotalCharges)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.timeShift)
+				</td>
+
+				<td>
+					@Html.DisplayFor(modelItem => item.CnicNo)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer.customerName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer.address)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer.mobileNo)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer.remarks)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Menu.menuName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Program.programName)
+				</td>
+				<td>
+					@Html.ActionLink("Additional Facilities", "additionalINFo", new { id = item.functionID })
+				</td>
+				<td>
+					@Html.ActionLink("Print", "additionalINFoprint", new { id = item.functionID })
+				</td>
+
+			</tr>
+		}
+
+	</table>
+}
+
+else
+{
+
+}

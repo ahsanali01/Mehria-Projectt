@@ -18,6 +18,9 @@ namespace WebApplication5.Models.DB
         public Dish()
         {
             this.MenuWithDishes = new HashSet<MenuWithDish>();
+            this.DishWithItems = new HashSet<DishWithItem>();
+            this.beveragesWithFunctionWithMenus = new HashSet<beveragesWithFunctionWithMenu>();
+            this.DesertWithFunctionWithMenus = new HashSet<DesertWithFunctionWithMenu>();
         }
     
         public int dishID { get; set; }
@@ -25,5 +28,11 @@ namespace WebApplication5.Models.DB
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MenuWithDish> MenuWithDishes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DishWithItem> DishWithItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<beveragesWithFunctionWithMenu> beveragesWithFunctionWithMenus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DesertWithFunctionWithMenu> DesertWithFunctionWithMenus { get; set; }
     }
 }
